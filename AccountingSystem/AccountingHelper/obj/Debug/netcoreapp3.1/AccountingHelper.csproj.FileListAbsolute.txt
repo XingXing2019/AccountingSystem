@@ -1,0 +1,10 @@
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\bin\Debug\netcoreapp3.1\NLog.config
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\bin\Debug\netcoreapp3.1\AccountingHelper.deps.json
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\bin\Debug\netcoreapp3.1\AccountingHelper.dll
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\bin\Debug\netcoreapp3.1\AccountingHelper.pdb
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.csproj.AssemblyReference.cache
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.AssemblyInfoInputs.cache
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.AssemblyInfo.cs
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.csproj.CoreCompileInputs.cache
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.dll
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.pdb

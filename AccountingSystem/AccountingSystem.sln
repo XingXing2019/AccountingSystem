@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingUI", "AccountingU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingDatabase", "AccountingDatabase\AccountingDatabase.csproj", "{1F01B377-CC7A-4704-8103-4D08EB6468D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingUIHelper", "AccountingUIHelper\AccountingUIHelper.csproj", "{9E91EDE6-CEBC-479E-9F17-94A4A551F383}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingHelper", "AccountingHelper\AccountingHelper.csproj", "{2C24E45B-54E3-4736-A3DA-D2CEE38DDE9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{1F01B377-CC7A-4704-8103-4D08EB6468D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F01B377-CC7A-4704-8103-4D08EB6468D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F01B377-CC7A-4704-8103-4D08EB6468D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E91EDE6-CEBC-479E-9F17-94A4A551F383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E91EDE6-CEBC-479E-9F17-94A4A551F383}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E91EDE6-CEBC-479E-9F17-94A4A551F383}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E91EDE6-CEBC-479E-9F17-94A4A551F383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C24E45B-54E3-4736-A3DA-D2CEE38DDE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C24E45B-54E3-4736-A3DA-D2CEE38DDE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C24E45B-54E3-4736-A3DA-D2CEE38DDE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C24E45B-54E3-4736-A3DA-D2CEE38DDE9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "WH4Jp9e3UcoGcwZvX4wx6i1Y8FCn382db+LXihGciTJAl0CGHP37ZLBi9HDreOHZMqvDbgpJ2odT29re1N3PyA==",
+  "success": true,
+  "projectFilePath": "D:\\C#\\Projects\\AccountingSystem\\AccountingSystem\\AccountingHelper\\AccountingHelper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\61425\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\nlog\\4.7.10\\nlog.4.7.10.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\nlog.config\\4.7.10\\nlog.config.4.7.10.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\nlog.schema\\4.7.10\\nlog.schema.4.7.10.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\npoi\\2.5.3\\npoi.2.5.3.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
