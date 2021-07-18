@@ -1,6 +1,6 @@
 ﻿using NPOI.SS.UserModel;
 
-namespace AccountingUIHelper.Interface
+namespace AccountingHelper.Interface
 {
 	public interface IExcelHelper
 	{

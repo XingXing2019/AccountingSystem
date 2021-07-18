@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
-using AccountingUIHelper.Interface;
+using AccountingHelper.Interface;
 using NLog;
 using NPOI.SS.UserModel;
 
-namespace AccountingUIHelper.Helper
+namespace AccountingHelper.Helper
 {
 	public class ExcelHelper : IExcelHelper
 	{
@@ -25,7 +25,8 @@ namespace AccountingUIHelper.Helper
 
 		public bool WriteExcel(IWorkbook workbook, string filePath)
 		{
-			var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite);
+			workbook.Close();
+			var fileStream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
 			try
 			{
 				workbook.Write(fileStream);

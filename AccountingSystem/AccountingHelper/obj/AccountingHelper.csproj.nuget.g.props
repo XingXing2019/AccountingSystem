@@ -28,6 +28,7 @@
     </None>
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\61425\.nuget\packages\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>
     <PkgNLog_Config Condition=" '$(PkgNLog_Config)' == '' ">C:\Users\61425\.nuget\packages\nlog.config\4.7.10</PkgNLog_Config>
   </PropertyGroup>
 </Project>

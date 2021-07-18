@@ -7,16 +7,16 @@ using NLog;
 
 namespace AccountingDatabase.Repository.Implementation
 {
-	public class OrderLineRepo : IOrderLineRepo
+	public class TransactionService : ITransactionService
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		public async Task<bool> PostOrderLine(OrderLine orderLine)
+		public async Task<bool> PostTransaction(Transaction transaction)
 		{
 			try
 			{
 				using (var context = new AccountingDBContext())
 				{
-					context.OrderLines.Add(orderLine);
+					context.Transactions.Add(transaction);
 					await context.SaveChangesAsync();
 					return true;
 				}

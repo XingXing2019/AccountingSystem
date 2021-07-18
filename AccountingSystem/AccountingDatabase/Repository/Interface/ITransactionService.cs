@@ -3,8 +3,8 @@ using AccountingDatabase.Entity;
 
 namespace AccountingDatabase.Repository.Interface
 {
-	public interface IOrderLineRepo
+	public interface ITransactionService
 	{
-		Task<bool> PostOrderLine(OrderLine orderLine);
+		Task<bool> PostTransaction(Transaction transaction);
 	}
 }
