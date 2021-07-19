@@ -1,10 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AccountingDatabase.Entity;
 
 namespace AccountingDatabase.Repository.Interface
 {
 	public interface ITransactionService
 	{
-		Task<bool> PostTransaction(Transaction transaction);
+		bool Post(Transaction transaction);
+		bool PostAll(IList<Transaction> transactions);
 	}
 }

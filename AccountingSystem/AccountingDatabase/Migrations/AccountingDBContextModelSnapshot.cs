@@ -19,29 +19,48 @@ namespace AccountingDatabase.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AccountingDatabase.Entity.Source", b =>
+            modelBuilder.Entity("AccountingDatabase.Entity.GL", b =>
                 {
-                    b.Property<int>("SourceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("GLCode")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Configuration")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("SourceId");
+                    b.Property<string>("GLDescription")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.ToTable("Sources");
+                    b.Property<string>("In")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("GLCode");
+
+                    b.ToTable("Gls");
                 });
 
             modelBuilder.Entity("AccountingDatabase.Entity.Transaction", b =>
                 {
-                    b.Property<int>("TransactionId")
-                        .HasColumnType("int");
+                    b.Property<int>("TransactionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("BatchEntry")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -63,11 +82,6 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("GLDescription")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("InvoiceNo")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -80,33 +94,26 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("SourceId")
-                        .HasColumnType("int");
+                    b.Property<string>("SourceCode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("VendorId")
-                        .HasColumnType("int");
+                    b.Property<string>("VendorCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("TransactionId", "BatchEntry");
-
-                    b.HasIndex("SourceId");
-
-                    b.HasIndex("VendorId");
+                    b.HasKey("TransactionID");
 
                     b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("AccountingDatabase.Entity.Vendor", b =>
                 {
-                    b.Property<int>("VendorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<string>("VendorCode")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -115,36 +122,9 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.HasKey("VendorId");
+                    b.HasKey("VendorCode");
 
                     b.ToTable("Vendors");
-                });
-
-            modelBuilder.Entity("AccountingDatabase.Entity.Transaction", b =>
-                {
-                    b.HasOne("AccountingDatabase.Entity.Source", "Source")
-                        .WithMany("Transactions")
-                        .HasForeignKey("SourceId");
-
-                    b.HasOne("AccountingDatabase.Entity.Vendor", "Vendor")
-                        .WithMany("Transactions")
-                        .HasForeignKey("VendorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Source");
-
-                    b.Navigation("Vendor");
-                });
-
-            modelBuilder.Entity("AccountingDatabase.Entity.Source", b =>
-                {
-                    b.Navigation("Transactions");
-                });
-
-            modelBuilder.Entity("AccountingDatabase.Entity.Vendor", b =>
-                {
-                    b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
         }

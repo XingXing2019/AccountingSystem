@@ -5,16 +5,21 @@ namespace AccountingDatabase.Entity
 {
 	public class Transaction
 	{
-		public int TransactionId { get; set; }
+		[Key]
+		public int TransactionID { get; set; }
 
 		[Required, MaxLength(50)]
 		public string BatchEntry { get; set; }
 
+		[Required, MaxLength(20)] 
+		public string SourceCode { get; set; }
+
+		[MaxLength(50)] 
+		public string VendorCode { get; set; }
+
 		[Required, MaxLength(50)]
 		public string GLCode { get; set; }
 
-		[Required, MaxLength(100)]
-		public string GLDescription { get; set; }
 
 		[Required, MaxLength(50)]
 		public string PostingSeq { get; set; }
@@ -34,10 +39,5 @@ namespace AccountingDatabase.Entity
 		[Required]
 		public DateTime TransactionDate { get; set; }
 		public DateTime? InvoiceReceiveDate { get; set; }
-
-		[Required]
-		public Vendor Vendor { get; set; }
-
-		public Source Source { get; set; }
 	}
 }

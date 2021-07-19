@@ -8,8 +8,8 @@ namespace AccountingDatabase
 		private const string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=AccountingSystem";
 
 		public DbSet<Transaction> Transactions { get; set; }
-		public DbSet<Source> Sources { get; set; }
 		public DbSet<Vendor> Vendors { get; set; }
+		public DbSet<GL> Gls { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -18,8 +18,11 @@ namespace AccountingDatabase
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Transaction>()
-				.HasKey(x => new {x.TransactionId, x.BatchEntry});
+			modelBuilder.Entity<Vendor>()
+				.HasKey(x => x.VendorCode);
+
+			modelBuilder.Entity<GL>()
+				.HasKey(x => x.GLCode);
 		}
 	}
 }
