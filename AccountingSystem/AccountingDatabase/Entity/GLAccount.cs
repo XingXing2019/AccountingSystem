@@ -2,29 +2,24 @@
 
 namespace AccountingDatabase.Entity
 {
-	public class GL
+	public class GLAccount
 	{
 		[Key]
-		public string GLCode { get; set; }
+		public string AccountNumber { get; set; }
 
 		[Required, MaxLength(100)]
-		public string GLDescription { get; set; }
+		public string Description { get; set; }
 
 		[Required]
-		public GLStatus Status { get; set; }
+		public string Status { get; set; }
 
 		[Required, MaxLength(20)]
-		public string Configuration { get; set; }
+		public string Config { get; set; }
 
 		[Required, MaxLength(10)]
 		public string In { get; set; }
 
 		[Required, MaxLength(10)]
 		public string Code { get; set; }
-	}
-
-	public enum GLStatus
-	{
-		Active, Inactive
 	}
 }

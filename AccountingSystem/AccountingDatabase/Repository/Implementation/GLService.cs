@@ -11,12 +11,12 @@ namespace AccountingDatabase.Repository.Implementation
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public GL Get(string glCode)
+		public GLAccount Get(string glCode)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				return context.Gls.Find(glCode);
+				return context.GlAccounts.Find(glCode);
 			}
 			catch (Exception ex)
 			{
@@ -27,12 +27,12 @@ namespace AccountingDatabase.Repository.Implementation
 			return null;
 		}
 
-		public List<GL> GetAll()
+		public List<GLAccount> GetAll()
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				return context.Gls.ToList();
+				return context.GlAccounts.ToList();
 			}
 			catch (Exception ex)
 			{
@@ -43,31 +43,31 @@ namespace AccountingDatabase.Repository.Implementation
 			return null;
 		}
 
-		public bool Post(GL gl)
+		public bool Post(GLAccount gl)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				context.Gls.Add(gl);
+				context.GlAccounts.Add(gl);
 				var count = context.SaveChanges();
-				_logger.Info($"Succesed post gl: {gl.GLCode}. {count} row affected");
+				_logger.Info($"Succesed post gl: {gl.AccountNumber}. {count} row affected");
 				return true;
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to post transaction: {gl.GLCode}. Ex: {ex.Message}");
+				_logger.Error($"Failed to post transaction: {gl.AccountNumber}. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
 			return false;
 		}
 
-		public bool PostAll(IList<GL> gls)
+		public bool PostAll(IList<GLAccount> gls)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				context.Gls.AddRange(gls);
+				context.GlAccounts.AddRange(gls);
 				var count = context.SaveChanges();
 				_logger.Info($"Succesed to post gls. {count} row affected");
 				return true;

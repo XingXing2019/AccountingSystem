@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AccountingDatabase.Migrations
 {
     [DbContext(typeof(AccountingDBContext))]
-    [Migration("20210719114300_init")]
+    [Migration("20210720110704_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,9 +21,9 @@ namespace AccountingDatabase.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AccountingDatabase.Entity.GL", b =>
+            modelBuilder.Entity("AccountingDatabase.Entity.GLAccount", b =>
                 {
-                    b.Property<string>("GLCode")
+                    b.Property<string>("AccountNumber")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Code")
@@ -31,12 +31,12 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("Configuration")
+                    b.Property<string>("Config")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("GLDescription")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -46,12 +46,13 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GLCode");
+                    b.HasKey("AccountNumber");
 
-                    b.ToTable("Gls");
+                    b.ToTable("GlAccounts");
                 });
 
             modelBuilder.Entity("AccountingDatabase.Entity.Transaction", b =>

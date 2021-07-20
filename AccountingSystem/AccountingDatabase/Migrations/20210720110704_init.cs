@@ -8,19 +8,19 @@ namespace AccountingDatabase.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Gls",
+                name: "GlAccounts",
                 columns: table => new
                 {
-                    GLCode = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    GLDescription = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    Configuration = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    AccountNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Config = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     In = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Gls", x => x.GLCode);
+                    table.PrimaryKey("PK_GlAccounts", x => x.AccountNumber);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,7 +63,7 @@ namespace AccountingDatabase.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Gls");
+                name: "GlAccounts");
 
             migrationBuilder.DropTable(
                 name: "Transactions");

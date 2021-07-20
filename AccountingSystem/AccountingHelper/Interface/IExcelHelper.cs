@@ -4,7 +4,7 @@ using NPOI.SS.UserModel;
 
 namespace AccountingHelper.Interface
 {
-	public interface IExcelHelper
+	public interface IExcelHelper<T>
 	{
 		//IWorkbook OpenExcel(string filePath);
 
@@ -12,6 +12,6 @@ namespace AccountingHelper.Interface
 
 		List<Transaction> ReadTransactions(string filePath);
 
-		List<GL> ReadGls(string filePath);
+		List<T> ReadExcel(string filePath);
 	}
 }

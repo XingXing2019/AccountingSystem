@@ -9,7 +9,7 @@ namespace AccountingDatabase
 
 		public DbSet<Transaction> Transactions { get; set; }
 		public DbSet<Vendor> Vendors { get; set; }
-		public DbSet<GL> Gls { get; set; }
+		public DbSet<GLAccount> GlAccounts { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -21,8 +21,8 @@ namespace AccountingDatabase
 			modelBuilder.Entity<Vendor>()
 				.HasKey(x => x.VendorCode);
 
-			modelBuilder.Entity<GL>()
-				.HasKey(x => x.GLCode);
+			modelBuilder.Entity<GLAccount>()
+				.HasKey(x => x.AccountNumber);
 		}
 	}
 }

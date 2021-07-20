@@ -20,7 +20,7 @@ namespace AccountingUI
 	public partial class Form1 : Form
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		private readonly IExcelHelper _excelHelper = new ExcelHelper();
+		private readonly IExcelHelper<GLAccount> _excelHelper = new ExcelHelper<GLAccount>();
 		private readonly ITransactionService _transactionService = new TransactionService();
 		private readonly IGLService _glService = new GLService();
 		private string path;
@@ -41,10 +41,11 @@ namespace AccountingUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			//var transactions = _excelHelper.ReadGls(@"C:\Users\61425\Desktop\GL.xls");
-			var transactions = _excelHelper.ReadTransactions(@"C:\Users\61425\Desktop\Data.xls");
+			//var gls = _excelHelper.ReadExcel(@"C:\Users\61425\Desktop\GL.xls");
+			var transactions = _excelHelper.ReadTransactions(@"C:\Users\61425\Desktop\Data - Copy.xls");
 
 			_transactionService.PostAll(transactions);
+			//_glService.PostAll(gls);
 		}
 
 		

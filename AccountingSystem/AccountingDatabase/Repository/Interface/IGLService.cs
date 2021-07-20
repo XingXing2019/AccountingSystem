@@ -5,10 +5,10 @@ namespace AccountingDatabase.Repository.Interface
 {
 	public interface IGLService
 	{
-		GL Get(string glCode);
-		List<GL> GetAll();
+		GLAccount Get(string glCode);
+		List<GLAccount> GetAll();
 
-		bool Post(GL gl);
-		bool PostAll(IList<GL> gls);
+		bool Post(GLAccount gl);
+		bool PostAll(IList<GLAccount> gls);
 	}
 }

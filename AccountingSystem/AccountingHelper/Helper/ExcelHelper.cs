@@ -10,7 +10,7 @@ using NPOI.SS.UserModel;
 
 namespace AccountingHelper.Helper
 {
-	public class ExcelHelper : IExcelHelper
+	public class ExcelHelper<T> : IExcelHelper<T>
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
@@ -68,7 +68,9 @@ namespace AccountingHelper.Helper
 
 						if (cell.Address.Column == 0)
 						{
-							trans.TransactionDate = new DateTime(int.Parse(year), int.Parse(cell.StringCellValue), 1);
+							var month = int.Parse(cell.StringCellValue);
+							var date = new DateTime(int.Parse(year) - 1, 6, 1);
+							trans.TransactionDate = date.AddMonths(month);
 						}
 						else if (cell.Address.Column == 1)
 						{
@@ -80,16 +82,19 @@ namespace AccountingHelper.Helper
 						}
 						else if (cell.Address.Column == 3)
 						{
-							if (trans.SourceCode.StartsWith("GL"))
-								continue;
-							trans.VendorCode = cell.StringCellValue.Split("*")[1];
+							if (trans.SourceCode.StartsWith("AP") && !trans.SourceCode.EndsWith("AD"))
+								trans.VendorCode = cell.StringCellValue.Split("*")[1];
+							else
+								trans.Description = cell.StringCellValue;
 						}
 						else if (cell.Address.Column == 4)
 						{
 							if (cell.CellType == CellType.String && !cell.StringCellValue.StartsWith(tobeIgnored))
 								trans.Description = $"*{cell.StringCellValue}";
-							if (!trans.SourceCode.StartsWith("GL"))
+							if (trans.SourceCode.StartsWith("AP"))
+							{
 								trans.InvoiceNo = cell.StringCellValue.Split("*")[0];
+							}
 						}
 						else if (cell.Address.Column == 5 && cell.CellType == CellType.Numeric)
 						{
@@ -115,9 +120,9 @@ namespace AccountingHelper.Helper
 			return transactions;
 		}
 
-		public List<GL> ReadGls(string filePath)
+		public List<T> ReadExcel(string filePath)
 		{
-			var gls = new List<GL>();
+			var results = new List<T>();
 			var workbook = OpenExcel(filePath);
 
 			if (workbook == null)
@@ -125,7 +130,11 @@ namespace AccountingHelper.Helper
 				_logger.Error($"Failed to read excel file with path: {filePath}.");
 				return null;
 			}
-			
+
+			var titleColumns = new Dictionary<int, string>();
+			var type = typeof(T);
+			var propertyInfos = type.GetProperties();
+
 			using var sheetReader = workbook.GetEnumerator();
 			while (sheetReader.MoveNext())
 			{
@@ -136,45 +145,54 @@ namespace AccountingHelper.Helper
 				while (reader.MoveNext())
 				{
 					var row = reader.Current as HSSFRow;
-					if(row == null || row.RowNum == 0) continue;
+					if (row == null) continue;
 
-					var gl = new GL();
+					// Read excel column title and column number from the first row
+					if (row.RowNum == 0)
+					{
+						foreach (var cell in row.Cells)
+						{
+							var col = cell.Address.Column;
+							var title = cell.StringCellValue.Replace(" ", "").Replace(".", "");
+							titleColumns.Add(col, title);
+						}
+						_logger.Debug($"Generate excel column title and column number mapping.");
+						continue;
+					}
+					
+					var unblankCells = row.Cells.Count(x => x.CellType != CellType.Blank);
+					if (unblankCells != titleColumns.Count)
+					{
+						_logger.Debug($"The number of unblank cells: {unblankCells} does not match the required number: {titleColumns.Count}");
+						continue;
+					}
+					
+					// Set property value using reflection
+					var instance = Activator.CreateInstance(type);
 					foreach (var cell in row.Cells)
 					{
-						if (cell.CellType == CellType.Blank)
-							continue;
-						if (cell.Address.Column == 0 && cell.CellType == CellType.String)
-						{
-							gl.GLCode = cell.StringCellValue;
-						}
-						else if (cell.Address.Column == 1 && cell.CellType == CellType.String)
-						{
-							gl.GLDescription = cell.StringCellValue;
-						}
-						else if (cell.Address.Column == 2 && cell.CellType == CellType.String)
-						{
-							gl.Status = cell.StringCellValue == "Active" ? GLStatus.Active : GLStatus.Inactive;
-						}
-						else if (cell.Address.Column == 3 && cell.CellType == CellType.String)
-						{
-							gl.Configuration = cell.StringCellValue;
-						}
-						else if (cell.Address.Column == 4 && cell.CellType == CellType.String)
-						{
-							gl.In = cell.StringCellValue;
-						}
-						else if (cell.Address.Column == 5 && cell.CellType == CellType.String)
-						{
-							gl.Code = cell.StringCellValue;
-						}
-					}
+						if (cell.CellType == CellType.Blank) continue;
 
-					if (gl.GLCode != null)
-						gls.Add(gl);
+						var propertyName = titleColumns[cell.Address.Column];
+						var propertyInfo = propertyInfos.FirstOrDefault(x => x.Name == propertyName);
+						if (propertyInfo == null) continue;
+
+						object value = null;
+						if (cell.CellType == CellType.String)
+							value = cell.StringCellValue;
+						else if (cell.CellType == CellType.Boolean)
+							value = cell.BooleanCellValue;
+						else if (cell.CellType == CellType.Numeric)
+							value = cell.NumericCellValue;
+						
+						propertyInfo.SetValue(instance, value);
+					}
+					
+					results.Add((T)instance);
 				}
 			}
 
-			return gls;
+			return results;
 		}
 
 
@@ -209,27 +227,6 @@ namespace AccountingHelper.Helper
 			}
 
 			return null;
-		}
-
-		private bool WriteExcel(IWorkbook workbook, string filePath)
-		{
-			workbook.Close();
-			var fileStream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-			try
-			{
-				workbook.Write(fileStream);
-				return true;
-			}
-			catch (Exception ex)
-			{
-				_logger.Error($"Failed to write excel file with path: {fileStream}. Ex: {ex.Message}");
-			}
-			finally
-			{
-				fileStream.Close();
-			}
-
-			return false;
 		}
 	}
 }
