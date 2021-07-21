@@ -19,7 +19,7 @@ namespace AccountingDatabase
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Vendor>()
-				.HasKey(x => x.VendorCode);
+				.HasKey(x => x.VendorID);
 
 			modelBuilder.Entity<GLAccount>()
 				.HasKey(x => x.AccountNumber);

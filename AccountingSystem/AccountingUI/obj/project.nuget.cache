@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IZANiC08tjq4Pa1IES3VNi9JTY/SnDE4u1PfGXrZ0sEyE8/Vw57o8wzeGJg7hIwpFNZfer5get6796EUDbze2A==",
+  "dgSpecHash": "7/EaoNeRYVaJoG6lHcBLKaGcMAWmXmyXTp4npDAL1l6SCjsGST8oyFYmj7BNmBEX4Wxu2c0BH+W3CqMlL+whGQ==",
   "success": true,
   "projectFilePath": "D:\\C#\\Projects\\AccountingSystem\\AccountingSystem\\AccountingUI\\AccountingUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\61425\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\61425\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

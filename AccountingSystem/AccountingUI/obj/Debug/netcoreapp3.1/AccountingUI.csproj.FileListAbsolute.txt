@@ -63,3 +63,5 @@ D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcorea
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingHelper.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingHelper.pdb
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingDatabase.pdb
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\ExcelDataReader.dll
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\ExcelDataReader.DataSet.dll

@@ -3,12 +3,12 @@ using AccountingDatabase.Entity;
 
 namespace AccountingDatabase.Repository.Interface
 {
-	public interface IGLService
+	public interface IGlAccountService
 	{
-		GLAccount Get(string glCode);
+		GLAccount Get(string id);
 		List<GLAccount> GetAll();
 
-		bool Post(GLAccount gl);
-		bool PostAll(IList<GLAccount> gls);
+		bool Post(GLAccount item);
+		bool PostAll(IList<GLAccount> items);
 	}
 }

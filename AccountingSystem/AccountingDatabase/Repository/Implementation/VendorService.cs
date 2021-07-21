@@ -1,81 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AccountingDatabase.Entity;
 using AccountingDatabase.Repository.Interface;
-using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace AccountingDatabase.Repository.Implementation
 {
-	public class TransactionService : ITransactionService
+	public class VendorService : IVendorService
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		public Transaction Get(string id)
+		public Vendor Get(string id)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				return context.Transactions.Find(id);
+				return context.Vendors.Find(id);
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to get transaction: {id}. Ex: {ex.Message}");
+				_logger.Error($"Failed to get vendor: {id}. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
 			return null;
 		}
 
-		public List<Transaction> GetAll()
+		public List<Vendor> GetAll()
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				return context.Transactions.ToList();
+				return context.Vendors.ToList();
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to get all transactions. Ex: {ex.Message}");
+				_logger.Error($"Failed to get all vendors. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
 			return null;
 		}
 
-		public bool Post(Transaction item)
+		public bool Post(Vendor item)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				context.Transactions.Add(item);
+				context.Vendors.Add(item);
 				var count = context.SaveChanges();
-				_logger.Info($"Succesed post transaction: {item.BatchEntry}. {count} row affected");
+				_logger.Info($"Succesed post vendor: {item.VendorID}. {count} row affected");
 				return true;
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to post transaction: {item.BatchEntry}. Ex: {ex.Message}");
+				_logger.Error($"Failed to post vendor: {item.VendorID}. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
 			return false;
 		}
 
-		public bool PostAll(IList<Transaction> items)
+		public bool PostAll(IList<Vendor> items)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				context.Transactions.AddRange(items);
+				context.Vendors.AddRange(items);
 				var count = context.SaveChanges();
-				_logger.Info($"Succesed to post transactions. {count} row affected");
+				_logger.Info($"Succesed to post vendors. {count} row affected");
 				return true;
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to post transactions. Ex: {ex.Message}");
+				_logger.Error($"Failed to post vendors. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 

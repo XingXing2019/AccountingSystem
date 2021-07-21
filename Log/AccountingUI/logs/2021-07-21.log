@@ -1,0 +1,386 @@
+2021-07-21 22:28:13.2111|INFO |Succesed post vendor: A00001A. 1 row affected
+2021-07-21 22:28:13.2478|INFO |Succesed post vendor: A00002U. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00003A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00004A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00005A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00006A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00007A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00008A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00009A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00010A. 1 row affected
+2021-07-21 22:28:13.2549|INFO |Succesed post vendor: A00011A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00012A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00013A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00014A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00015A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00016A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00017A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00018U. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00019U. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00020A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00021A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00022A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00023A. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00024U. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00025U. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00026U. 1 row affected
+2021-07-21 22:28:13.2703|INFO |Succesed post vendor: A00027A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: A00028U. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: A00029U. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: A00030A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: A00031A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: A00032A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: A00033A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: AR REFUND. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00001A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00002A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00003A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00004U. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00005U. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00006A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00007A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00008A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00009U. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00010A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: B00011A. 1 row affected
+2021-07-21 22:28:13.2862|INFO |Succesed post vendor: C00001U. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00002A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00003A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00004U. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00005A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00006U. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00007A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00008A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00009A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00010A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: C00011A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: D00001A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: D00002A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: D00003A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: D00004A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: D00005A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: D00006A. 1 row affected
+2021-07-21 22:28:13.3030|INFO |Succesed post vendor: E00001A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: E00002A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: E00003U. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: E00004A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: E00005A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: F00001A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: F00002A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: F00003A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: F00004U. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: F00005U. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: F00006A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: G00001A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: G00002U. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: G00003U. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: G00004A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: G00005A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: H00001A. 1 row affected
+2021-07-21 22:28:13.3167|INFO |Succesed post vendor: H00002A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: H00003A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: H00004A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: H00005A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: H00006A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: H00007A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: I00001A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: I00001U. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: I00002A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: I00003U. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: I00004U. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: J00001U. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: J00002A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: J00003A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: J00004A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: K00001A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: K00002U. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: K00003A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: L00001A. 1 row affected
+2021-07-21 22:28:13.3331|INFO |Succesed post vendor: L00002A. 1 row affected
+2021-07-21 22:28:13.3480|INFO |Succesed post vendor: L00003U. 1 row affected
+2021-07-21 22:28:13.3480|INFO |Succesed post vendor: L00004U. 1 row affected
+2021-07-21 22:28:13.3480|INFO |Succesed post vendor: L00005A. 1 row affected
+2021-07-21 22:28:13.3480|INFO |Succesed post vendor: L00006A. 1 row affected
+2021-07-21 22:28:13.3480|INFO |Succesed post vendor: L00007A. 1 row affected
+2021-07-21 22:28:13.3480|INFO |Succesed post vendor: L00008U. 1 row affected
+2021-07-21 22:28:13.4020|ERROR|Failed to post vendor: L00009A. Ex: An error occurred while updating the entries. See the inner exception for details.
+2021-07-21 22:28:13.4167|ERROR|Inner Ex: Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:2ab8bff6-4f03-4a59-9e8d-03dc54c5bfc0
+Error Number:8152,State:13,Class:16
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: L00010A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: L00011A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: L00012A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: L00013U. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: L00014A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: M00001A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: M00002A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: M00003A. 1 row affected
+2021-07-21 22:28:13.4167|INFO |Succesed post vendor: M00003U. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00004A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00005A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00006A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00007A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00008A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00009A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00010A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00011A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00012U. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00013A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00014A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: M00015U. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: N00001A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: N00002A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: N00003A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: N00004A. 1 row affected
+2021-07-21 22:28:13.4262|INFO |Succesed post vendor: N00005A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: N00006A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: N00007A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: O00001A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: O00002A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: O00003A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: O00004A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: O00005U. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: ONEOFF. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00001A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00002U. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00003A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00003U. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00004A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00005A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00006A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00007A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00008A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00009A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: P00010A. 1 row affected
+2021-07-21 22:28:13.4414|INFO |Succesed post vendor: Q00001A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: Q00002A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00001A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00002A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00003A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00004A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00005U. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00006A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: R00007A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00001U. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00002A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00003A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00004U. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00005A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00006A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00007A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00008A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00009A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00010A. 1 row affected
+2021-07-21 22:28:13.4580|INFO |Succesed post vendor: S00011G. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00012S. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00013A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00014A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00014U. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00015U. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00016A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00017A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00018A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00019A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00020A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00021A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00022A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00023A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00024A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00025A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00026A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00027A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: S00027U. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: ST0001A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: ST0002A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: ST0003A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: ST0004A. 1 row affected
+2021-07-21 22:28:13.4726|INFO |Succesed post vendor: ST0005A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST0006A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST00070A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST0007A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST0008A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST0009A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST0010A. 1 row affected
+2021-07-21 22:28:13.4892|INFO |Succesed post vendor: ST0011A. 1 row affected
+2021-07-21 22:28:13.5145|ERROR|Failed to post vendor: ST0012A. Ex: An error occurred while updating the entries. See the inner exception for details.
+2021-07-21 22:28:13.5145|ERROR|Inner Ex: Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:2ab8bff6-4f03-4a59-9e8d-03dc54c5bfc0
+Error Number:8152,State:13,Class:16
+2021-07-21 22:28:13.5145|INFO |Succesed post vendor: ST0013A. 1 row affected
+2021-07-21 22:28:13.5145|INFO |Succesed post vendor: ST0014A. 1 row affected
+2021-07-21 22:28:13.5145|INFO |Succesed post vendor: ST0015A. 1 row affected
+2021-07-21 22:28:13.5145|INFO |Succesed post vendor: ST0016A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0017A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0018A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0019A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0020A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0021A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0022A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0023A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0024A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0025A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0026A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0027A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0028A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0029A. 1 row affected
+2021-07-21 22:28:13.5199|INFO |Succesed post vendor: ST0030A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0031A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0032A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0033A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0034A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0035A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0036A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0037A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0038A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0039A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0040A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0041A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0042A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0043A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0044A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0045A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0046A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0047A. 1 row affected
+2021-07-21 22:28:13.5351|INFO |Succesed post vendor: ST0048A. 1 row affected
+2021-07-21 22:28:13.5518|INFO |Succesed post vendor: ST0049A. 1 row affected
+2021-07-21 22:28:13.5518|INFO |Succesed post vendor: ST0050A. 1 row affected
+2021-07-21 22:28:13.5701|ERROR|Failed to post vendor: ST0051A. Ex: An error occurred while updating the entries. See the inner exception for details.
+2021-07-21 22:28:13.5701|ERROR|Inner Ex: Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:2ab8bff6-4f03-4a59-9e8d-03dc54c5bfc0
+Error Number:8152,State:13,Class:16
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0052A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0053A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0054A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0055A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0056A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0057A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0058A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0059A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0060A. 1 row affected
+2021-07-21 22:28:13.5701|INFO |Succesed post vendor: ST0061A. 1 row affected
+2021-07-21 22:28:13.5977|ERROR|Failed to post vendor: ST0062A. Ex: An error occurred while updating the entries. See the inner exception for details.
+2021-07-21 22:28:13.5983|ERROR|Inner Ex: Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:2ab8bff6-4f03-4a59-9e8d-03dc54c5bfc0
+Error Number:8152,State:13,Class:16
+2021-07-21 22:28:13.5983|INFO |Succesed post vendor: ST0063A. 1 row affected
+2021-07-21 22:28:13.5983|INFO |Succesed post vendor: ST0064A. 1 row affected
+2021-07-21 22:28:13.6172|ERROR|Failed to post vendor: ST0065A. Ex: An error occurred while updating the entries. See the inner exception for details.
+2021-07-21 22:28:13.6172|ERROR|Inner Ex: Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:2ab8bff6-4f03-4a59-9e8d-03dc54c5bfc0
+Error Number:8152,State:13,Class:16
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0066A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0067A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0068A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0069A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0070A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0071A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0072A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: ST0073A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: T00001A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: T00002A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: T00003U. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: T00004A. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: T00005E. 1 row affected
+2021-07-21 22:28:13.6172|INFO |Succesed post vendor: T00006U. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: T00007A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: T00008A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: T00009A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: T00010A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: T00011A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: U00001A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: V00001A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: V00002U. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00001A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00001U. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00002A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00003U. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00004A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00005U. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00006A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00007U. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00008A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: W00009A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: X00001A. 1 row affected
+2021-07-21 22:28:13.6301|INFO |Succesed post vendor: Z00001U. 1 row affected
+2021-07-21 22:34:50.4890|INFO |Succesed to post vendors. 289 row affected
+2021-07-21 22:34:50.6564|INFO |Succesed to post Gl accounts. 1085 row affected

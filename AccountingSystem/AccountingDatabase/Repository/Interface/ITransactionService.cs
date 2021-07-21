@@ -6,7 +6,10 @@ namespace AccountingDatabase.Repository.Interface
 {
 	public interface ITransactionService
 	{
-		bool Post(Transaction transaction);
-		bool PostAll(IList<Transaction> transactions);
+		Transaction Get(string id);
+		List<Transaction> GetAll();
+
+		bool Post(Transaction item);
+		bool PostAll(IList<Transaction> items);
 	}
 }

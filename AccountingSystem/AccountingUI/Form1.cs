@@ -1,28 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using AccountingDatabase.Entity;
 using AccountingDatabase.Repository.Implementation;
 using AccountingDatabase.Repository.Interface;
 using AccountingHelper.Helper;
-using AccountingHelper.Interface;
 using NLog;
-using NLog.Fluent;
-using NPOI.HSSF.UserModel;
-using NPOI.SS.UserModel;
-using NPOI.SS.Util;
-using NPOI.XSSF.UserModel;
 
 namespace AccountingUI
 {
 	public partial class Form1 : Form
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		private readonly IExcelHelper<GLAccount> _excelHelper = new ExcelHelper<GLAccount>();
+		
 		private readonly ITransactionService _transactionService = new TransactionService();
-		private readonly IGLService _glService = new GLService();
+		private readonly IGlAccountService _glAccountService = new GlAccountService();
 		private string path;
 
 		
@@ -41,13 +32,13 @@ namespace AccountingUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			//var gls = _excelHelper.ReadExcel(@"C:\Users\61425\Desktop\GL.xls");
-			var transactions = _excelHelper.ReadTransactions(@"C:\Users\61425\Desktop\Data - Copy.xls");
-
-			_transactionService.PostAll(transactions);
-			//_glService.PostAll(gls);
+			var vendorPath = @"C:\Users\61425\Desktop\RAL-VENDOR.xlsx";
+			var vendors = new ExcelHelper<Vendor>().ReadExcel(vendorPath);
+			new VendorService().PostAll(vendors);
+			
+			var glAccountPath = @"C:\Users\61425\Desktop\GL.xls";
+			var glAccounts = new ExcelHelper<GLAccount>().ReadExcel(glAccountPath);
+			new GlAccountService().PostAll(glAccounts);
 		}
-
-		
 	}
 }

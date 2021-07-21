@@ -4,14 +4,16 @@ using AccountingDatabase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AccountingDatabase.Migrations
 {
     [DbContext(typeof(AccountingDBContext))]
-    partial class AccountingDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210721114815_changeVendor")]
+    partial class changeVendor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,12 +169,12 @@ namespace AccountingDatabase.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TextPHON1")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("TextPHON2")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("TextSTRE1")
                         .HasMaxLength(100)

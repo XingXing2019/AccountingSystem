@@ -7,20 +7,20 @@ using NLog;
 
 namespace AccountingDatabase.Repository.Implementation
 {
-	public class GLService : IGLService
+	public class GlAccountService : IGlAccountService
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public GLAccount Get(string glCode)
+		public GLAccount Get(string id)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				return context.GlAccounts.Find(glCode);
+				return context.GlAccounts.Find(id);
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to get GL: {glCode}. Ex: {ex.Message}");
+				_logger.Error($"Failed to get Gl account: {id}. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
@@ -36,45 +36,45 @@ namespace AccountingDatabase.Repository.Implementation
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to get all GL. Ex: {ex.Message}");
+				_logger.Error($"Failed to get all Gl accounts. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
 			return null;
 		}
 
-		public bool Post(GLAccount gl)
+		public bool Post(GLAccount item)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				context.GlAccounts.Add(gl);
+				context.GlAccounts.Add(item);
 				var count = context.SaveChanges();
-				_logger.Info($"Succesed post gl: {gl.AccountNumber}. {count} row affected");
+				_logger.Info($"Succesed post Gl account: {item.AccountNumber}. {count} row affected");
 				return true;
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to post transaction: {gl.AccountNumber}. Ex: {ex.Message}");
+				_logger.Error($"Failed to post Gl account: {item.AccountNumber}. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
 			return false;
 		}
 
-		public bool PostAll(IList<GLAccount> gls)
+		public bool PostAll(IList<GLAccount> items)
 		{
 			try
 			{
 				using var context = new AccountingDBContext();
-				context.GlAccounts.AddRange(gls);
+				context.GlAccounts.AddRange(items);
 				var count = context.SaveChanges();
-				_logger.Info($"Succesed to post gls. {count} row affected");
+				_logger.Info($"Succesed to post Gl accounts. {count} row affected");
 				return true;
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Failed to post gls. Ex: {ex.Message}");
+				_logger.Error($"Failed to post Gl accounts. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 

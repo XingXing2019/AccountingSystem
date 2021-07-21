@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using AccountingDatabase.Entity;
 using AccountingHelper.Interface;
+using ExcelDataReader;
 using NLog;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
@@ -119,72 +122,46 @@ namespace AccountingHelper.Helper
 
 			return transactions;
 		}
-
+		
 		public List<T> ReadExcel(string filePath)
 		{
+			System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+			using var stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+			var reader = ExcelReaderFactory.CreateReader(stream);
+			var tables = reader.AsDataSet().Tables.Cast<DataTable>();
+
 			var results = new List<T>();
-			var workbook = OpenExcel(filePath);
-
-			if (workbook == null)
-			{
-				_logger.Error($"Failed to read excel file with path: {filePath}.");
-				return null;
-			}
-
 			var titleColumns = new Dictionary<int, string>();
 			var type = typeof(T);
 			var propertyInfos = type.GetProperties();
-
-			using var sheetReader = workbook.GetEnumerator();
-			while (sheetReader.MoveNext())
+			foreach (var table in tables)
 			{
-				var sheet = sheetReader.Current;
-				if (sheet == null) continue;
-
-				var reader = sheet.GetEnumerator();
-				while (reader.MoveNext())
+				for (int i = 0; i < table.Rows.Count; i++)
 				{
-					var row = reader.Current as HSSFRow;
-					if (row == null) continue;
-
-					// Read excel column title and column number from the first row
-					if (row.RowNum == 0)
+					var cells = table.Rows[i].ItemArray;
+					if (i == 0)
 					{
-						foreach (var cell in row.Cells)
+						for (int col = 0; col < cells.Length; col++)
 						{
-							var col = cell.Address.Column;
-							var title = cell.StringCellValue.Replace(" ", "").Replace(".", "");
+							var title = cells[col].ToString()?.Replace(" ", "").Replace(".", "");
 							titleColumns.Add(col, title);
 						}
+
 						_logger.Debug($"Generate excel column title and column number mapping.");
 						continue;
 					}
-					
-					var unblankCells = row.Cells.Count(x => x.CellType != CellType.Blank);
-					if (unblankCells != titleColumns.Count)
-					{
-						_logger.Debug($"The number of unblank cells: {unblankCells} does not match the required number: {titleColumns.Count}");
-						continue;
-					}
-					
+
 					// Set property value using reflection
 					var instance = Activator.CreateInstance(type);
-					foreach (var cell in row.Cells)
+					for (int col = 0; col < cells.Length; col++)
 					{
-						if (cell.CellType == CellType.Blank) continue;
-
-						var propertyName = titleColumns[cell.Address.Column];
-						var propertyInfo = propertyInfos.FirstOrDefault(x => x.Name == propertyName);
-						if (propertyInfo == null) continue;
-
-						object value = null;
-						if (cell.CellType == CellType.String)
-							value = cell.StringCellValue;
-						else if (cell.CellType == CellType.Boolean)
-							value = cell.BooleanCellValue;
-						else if (cell.CellType == CellType.Numeric)
-							value = cell.NumericCellValue;
+						var propertyName = titleColumns[col];
+						var propertyInfo = propertyInfos.FirstOrDefault(x => string.Equals(x.Name, propertyName, StringComparison.CurrentCultureIgnoreCase));
+						if (propertyInfo == null) 
+							continue;
 						
+						var propertyType = propertyInfo.PropertyType;
+						var value = Convert.ChangeType(cells[col], propertyType);
 						propertyInfo.SetValue(instance, value);
 					}
 					
@@ -194,8 +171,6 @@ namespace AccountingHelper.Helper
 
 			return results;
 		}
-
-
 
 		private bool IsGLCode(string code)
 		{
