@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7/EaoNeRYVaJoG6lHcBLKaGcMAWmXmyXTp4npDAL1l6SCjsGST8oyFYmj7BNmBEX4Wxu2c0BH+W3CqMlL+whGQ==",
+  "dgSpecHash": "WGyu6erzEEHI7PdwceMW7i//bIDm3ql/hS4lFKi0BfM9FHcSBmgp5YsHjc9dDNCQUyi4G1g2827ZByvL1xGjrQ==",
   "success": true,
   "projectFilePath": "D:\\C#\\Projects\\AccountingSystem\\AccountingSystem\\AccountingUI\\AccountingUI.csproj",
   "expectedPackageFiles": [
@@ -37,10 +37,7 @@
     "C:\\Users\\61425\\.nuget\\packages\\nlog\\4.7.10\\nlog.4.7.10.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\nlog.config\\4.7.10\\nlog.config.4.7.10.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\nlog.schema\\4.7.10\\nlog.schema.4.7.10.nupkg.sha512",
-    "C:\\Users\\61425\\.nuget\\packages\\npoi\\2.5.3\\npoi.2.5.3.nupkg.sha512",
-    "C:\\Users\\61425\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
-    "C:\\Users\\61425\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\61425\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

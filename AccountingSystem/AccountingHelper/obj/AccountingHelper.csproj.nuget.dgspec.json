@@ -139,10 +139,6 @@
             "NLog.Config": {
               "target": "Package",
               "version": "[4.7.10, )"
-            },
-            "NPOI": {
-              "target": "Package",
-              "version": "[2.5.3, )"
             }
           },
           "imports": [

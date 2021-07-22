@@ -37,12 +37,6 @@ D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcorea
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\NPOI.OOXML.dll
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\NPOI.OpenXml4Net.dll
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\NPOI.OpenXmlFormats.dll
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\NPOI.dll
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll

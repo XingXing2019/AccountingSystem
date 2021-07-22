@@ -4,7 +4,7 @@ namespace AccountingDatabase.Entity
 {
 	public class GLAccount
 	{
-		[Key]
+		[Required, MaxLength(100)]
 		public string AccountNumber { get; set; }
 
 		[Required, MaxLength(100)]

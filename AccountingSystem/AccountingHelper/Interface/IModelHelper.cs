@@ -2,8 +2,8 @@
 
 namespace AccountingHelper.Interface
 {
-	public interface IExcelHelper<T>
+	public interface IModelHelper<S, T>
 	{
-		List<T> ReadExcel(string filePath);
+		List<T> Transform(List<S> source);
 	}
 }

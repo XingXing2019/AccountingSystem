@@ -22,7 +22,8 @@ namespace AccountingDatabase.Migrations
             modelBuilder.Entity("AccountingDatabase.Entity.GLAccount", b =>
                 {
                     b.Property<string>("AccountNumber")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -65,23 +66,23 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<decimal?>("Credit")
+                    b.Property<decimal>("Credit")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal?>("Debit")
+                    b.Property<decimal>("Debit")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Description")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTime>("DocDate")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("ExchRate")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("GLCode")
+                    b.Property<string>("GLAccount")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("InvoiceNo")
                         .HasMaxLength(100)
@@ -90,22 +91,29 @@ namespace AccountingDatabase.Migrations
                     b.Property<DateTime?>("InvoiceReceiveDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PostingSeq")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("PostSeq")
+                        .HasColumnType("int");
 
                     b.Property<string>("SourceCode")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<DateTime>("TransactionDate")
+                    b.Property<DateTime>("TransDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("VendorCode")
+                    b.Property<string>("VendName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("VendorID")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("YearPeriod")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("TransactionID");
 
