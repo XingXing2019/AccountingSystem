@@ -12,7 +12,7 @@ namespace AccountingDatabase.Repository.Implementation
 	public class TransactionService : ITransactionService
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		public Transaction Get(string id)
+		public Transaction GetByID(string id)
 		{
 			try
 			{

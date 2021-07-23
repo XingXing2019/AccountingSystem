@@ -4,14 +4,16 @@ using AccountingDatabase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AccountingDatabase.Migrations
 {
     [DbContext(typeof(AccountingDBContext))]
-    partial class AccountingDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210723122207_DropInvoiceReceiveDate")]
+    partial class DropInvoiceReceiveDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

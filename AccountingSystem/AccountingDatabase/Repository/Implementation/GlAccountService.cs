@@ -11,7 +11,7 @@ namespace AccountingDatabase.Repository.Implementation
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public GLAccount Get(string id)
+		public GLAccount GetByID(string id)
 		{
 			try
 			{

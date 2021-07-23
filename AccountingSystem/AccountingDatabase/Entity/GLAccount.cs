@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AccountingDatabase.Entity
 {
@@ -13,7 +14,7 @@ namespace AccountingDatabase.Entity
 		[Required]
 		public string Status { get; set; }
 
-		[Required, MaxLength(20)]
+		[Required, MaxLength(20), Column("Configuration")]
 		public string Config { get; set; }
 
 		[Required, MaxLength(10)]

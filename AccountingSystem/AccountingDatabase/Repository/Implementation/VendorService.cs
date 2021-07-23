@@ -10,7 +10,7 @@ namespace AccountingDatabase.Repository.Implementation
 	public class VendorService : IVendorService
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		public Vendor Get(string id)
+		public Vendor GetByID(string id)
 		{
 			try
 			{
@@ -20,6 +20,22 @@ namespace AccountingDatabase.Repository.Implementation
 			catch (Exception ex)
 			{
 				_logger.Error($"Failed to get vendor: {id}. Ex: {ex.Message}");
+				_logger.Error($"Inner Ex: {ex.InnerException}");
+			}
+
+			return null;
+		}
+
+		public Vendor GetByVendorName(string vendorName)
+		{
+			try
+			{
+				using var context = new AccountingDBContext();
+				return context.Vendors.FirstOrDefault(x => x.VendName == vendorName);
+			}
+			catch (Exception ex)
+			{
+				_logger.Error($"Failed to get vendor: {vendorName}. Ex: {ex.Message}");
 				_logger.Error($"Inner Ex: {ex.InnerException}");
 			}
 
