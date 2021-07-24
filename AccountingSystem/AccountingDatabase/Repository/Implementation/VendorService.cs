@@ -31,7 +31,7 @@ namespace AccountingDatabase.Repository.Implementation
 			try
 			{
 				using var context = new AccountingDBContext();
-				return context.Vendors.FirstOrDefault(x => x.VendName == vendorName);
+				return context.Vendors.FirstOrDefault(x => x.VendorName == vendorName);
 			}
 			catch (Exception ex)
 			{

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AccountingDatabase.Entity
 {
@@ -26,7 +25,11 @@ namespace AccountingDatabase.Entity
 
 		[Required, MaxLength(20)]
 		public string SourceCode { get; set; }
-		
+
+		// Decode from Description[1] in excel
+		[Required, MaxLength(50)]
+		public string VendorID { get; set; }
+
 		[Required]
 		public decimal Debit { get; set; }
 
@@ -43,9 +46,5 @@ namespace AccountingDatabase.Entity
 		// Decode from Reference[1] in excel
 		[MaxLength(200)]
 		public string InvoiceDescription { get; set; }
-		
-		// Decode from Description[1] in excel
-		[Required, MaxLength(50)]
-		public string VendorID { get; set; }
 	}
 }

@@ -28,6 +28,27 @@ namespace AccountingDatabase.Repository.Implementation
 			return null;
 		}
 
+		public Transaction GetByTransactionInfo(DateTime transactionDate, string glAccount, int postSequence, string batchEntry, string sourceCode)
+		{
+			try
+			{
+				using var context = new AccountingDBContext();
+				return context.Transactions
+					.FirstOrDefault(x => x.TransactionDate == transactionDate &&
+					                     x.GLAccount == glAccount &&
+					                     x.PostSequence == postSequence &&
+					                     x.BatchEntry == batchEntry &&
+					                     x.SourceCode == sourceCode);
+			}
+			catch (Exception ex)
+			{
+				_logger.Error($"Failed to get transaction with transaction info TransactionDate: {transactionDate}, GLAccount: {glAccount}, PostSequence: {postSequence}, BatchEntry: {batchEntry}, SourceCode: {sourceCode}. Ex: {ex.Message}");
+				_logger.Error($"Inner Ex: {ex.InnerException}");
+			}
+
+			return null;
+		}
+
 		public List<Transaction> GetAll()
 		{
 			try

@@ -30,11 +30,10 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("Config")
+                    b.Property<string>("Configuration")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("Configuration");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -119,56 +118,70 @@ namespace AccountingDatabase.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("CodeCTRY")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Country");
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("CodePSTL")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("PostCode");
+                    b.Property<string>("Address1")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("CodeSTTE")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("State");
+                    b.Property<string>("Address2")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("CurnCode")
+                    b.Property<string>("Address3")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Address4")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Country")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CurrencyCode")
                         .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)")
-                        .HasColumnName("CurrencyCode");
-
-                    b.Property<DateTime>("DateLastMN")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastMaintenanceDate");
-
-                    b.Property<DateTime>("DateStart")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("StartDate");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("IDGRP")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("NameCity")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("City");
+                    b.Property<DateTime>("LastMaintenanceDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("OnHold")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Phone1")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone2")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PostCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ShortName")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("SwActv")
-                        .HasColumnType("bit")
-                        .HasColumnName("Active");
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<bool>("SwHold")
-                        .HasColumnType("bit")
-                        .HasColumnName("OnHold");
+                    b.Property<string>("State")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("TaxClass1")
                         .HasColumnType("int");
@@ -176,41 +189,10 @@ namespace AccountingDatabase.Migrations
                     b.Property<int>("TermsCode")
                         .HasColumnType("int");
 
-                    b.Property<string>("TextPHON1")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Phone1");
-
-                    b.Property<string>("TextPHON2")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Phone2");
-
-                    b.Property<string>("TextSTRE1")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Address1");
-
-                    b.Property<string>("TextSTRE2")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Address2");
-
-                    b.Property<string>("TextSTRE3")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Address3");
-
-                    b.Property<string>("TextSTRE4")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Address4");
-
-                    b.Property<string>("VendName")
+                    b.Property<string>("VendorName")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
-                        .HasColumnName("VendorName");
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("VendorID");
 
