@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using AccountingDatabase.Entity;
-using AccountingDatabase.Repository.Implementation;
-using AccountingDatabase.Repository.Interface;
+using AccountingDatabase.Services;
+using AccountingDatabase.Services.Interface;
 using AccountingHelper.Model;
 using NLog;
 
