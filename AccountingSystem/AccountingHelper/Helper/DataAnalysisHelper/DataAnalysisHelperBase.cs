@@ -11,12 +11,22 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 
 		protected string GenerateWhereClause(List<string> whereItems)
 		{
-			return $"WHERE\n\t{string.Join(", ", whereItems)}";
+			return $"\nWHERE\n\t{string.Join(", ", whereItems)}";
 		}
 
-		protected string GenerateGroupByClause(List<string> groupbyItems)
+		protected string GenerateGroupByClause(List<string> groupByItems)
 		{
-			return $"\nGROUP BY\n\t{string.Join(", ", groupbyItems)}";
+			return $"\nGROUP BY\n\t{string.Join(", ", groupByItems)}";
+		}
+
+		protected string GenerateOrderByClause(List<string> orderByItems)
+		{
+			return $"\nORDER BY\n\t{string.Join(", ", orderByItems)}";
+		}
+
+		protected string GeneratePaginationClause(int pageSize, int pageNumber)
+		{
+			return $"\nOFFSET {pageSize * (pageNumber - 1)} ROW FETCH NEXT {pageSize} ROW ONLY";
 		}
 	}
 }

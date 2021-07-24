@@ -3,7 +3,7 @@
 	public class TransactionSqls
 	{
 		// Place holder definition {0}: selected fields
-		public const string SELECT_TRANSACTIONS = "SELECT\n\t{0}\nFROM\n\tTransactions\n";
+		public const string SELECT_TRANSACTIONS = "SELECT\n\t{0}\nFROM\n\tTransactions";
 
 		// Place holder definition {0}: selected criteria
 		public const string DELETE_TRANSACTIONS = "DELETE FROM\n\tTransaction\nWHERE\n\t{0}";

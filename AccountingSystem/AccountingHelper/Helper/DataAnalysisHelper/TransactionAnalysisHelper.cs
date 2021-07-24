@@ -8,14 +8,16 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 {
 	public class TransactionAnalysisHelper : DataAnalysisHelperBase
 	{
-		public Dictionary<string, List<string>> AnalysisTransactionsInYearPeriod(List<string> selectItems, List<string> whereItems, List<string> groupByItems, DateTime startPeriod, DateTime endPeriod)
+		public Dictionary<string, List<string>> AnalysisTransactionsInYearPeriod(List<string> selectItems, List<string> whereItems, List<string> groupByItems, List<string> orderByItems, DateTime startPeriod, DateTime endPeriod, int pageSize, int pageNumber)
 		{
 			var select = GenerateSelectClause(TransactionSqls.SELECT_TRANSACTIONS, selectItems);
 			var where = GenerateWhereClause(whereItems);
 			var groupBy = GenerateGroupByClause(groupByItems);
 			var col = GenerateYearPeriodColumns(startPeriod, endPeriod);
+			var orderBy = GenerateOrderByClause(orderByItems);
+			var pagination = GeneratePaginationClause(pageSize, pageNumber);
 
-			var sql = $"WITH Data AS ({select}{where}{groupBy})\n{string.Format(TransactionSqls.PIVOT_COLUMN_ROW, "SUM", "YearPeriod", col)}";
+			var sql = $"WITH Data AS ({select}{where}{groupBy})\n{string.Format(TransactionSqls.PIVOT_COLUMN_ROW, "SUM", "YearPeriod", col)}{orderBy}{pagination}";
 			var values = new SqlExecutor().ExecuteSelectQuery(sql);
 			return values;
 		}

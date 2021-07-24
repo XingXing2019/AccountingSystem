@@ -53,11 +53,13 @@ namespace AccountingUI
 				"YearPeriod"
 			};
 			var criterion = new List<string>{"VendorID IS NOT NULL"};
-			var groupbyItems = new List<string> {"VendorID", "YearPeriod"};
+			var groupByItems = new List<string> {"VendorID", "YearPeriod"};
+			var orderByItems = new List<string> {"VendorID"};
 
 			var startPeriod = new DateTime(2020, 10, 01);
 			var endPeriod = new DateTime(2021, 08, 01);
-			new TransactionAnalysisHelper().AnalysisTransactionsInYearPeriod(selectItems, criterion, groupbyItems, startPeriod, endPeriod);
+			int pageSize = 10, pageNumber = 2;
+			new TransactionAnalysisHelper().AnalysisTransactionsInYearPeriod(selectItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod, pageSize, pageNumber);
 		}
 	}
 }
