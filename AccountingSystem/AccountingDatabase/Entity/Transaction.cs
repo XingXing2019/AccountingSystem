@@ -28,7 +28,7 @@ namespace AccountingDatabase.Entity
 
 		// Decode from Description[1] in excel
 		[Required, MaxLength(50)]
-		public string VendorID { get; set; }
+		public string VendorCode { get; set; }
 
 		[Required]
 		public decimal Debit { get; set; }

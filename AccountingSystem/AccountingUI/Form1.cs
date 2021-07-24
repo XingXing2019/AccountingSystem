@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using AccountingDatabase.Services;
 using AccountingDatabase.Services.Interface;
 using AccountingHelper.Helper.DataAnalysisHelper;
+using AccountingHelper.Helper.ExcelHelper;
+using AccountingHelper.Helper.ModelHelper;
+using AccountingHelper.Model;
 using NLog;
 
 namespace AccountingUI
@@ -49,17 +52,20 @@ namespace AccountingUI
 
 			var selectItems = new List<string>
 			{
-				"VendorID", "COUNT(DISTINCT InvoiceNo) AS Invoices",
-				"YearPeriod"
+				"VendorCode", "VendorName", "COUNT(DISTINCT InvoiceNo) AS Invoices",
+				"SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod"
 			};
-			var criterion = new List<string>{"VendorID IS NOT NULL"};
-			var groupByItems = new List<string> {"VendorID", "YearPeriod"};
-			var orderByItems = new List<string> {"VendorID"};
+			var criterion = new List<string> { "VendorCode IS NOT NULL" };
+			var groupByItems = new List<string> { "VendorCode", "VendorName", "YearPeriod" };
+			var orderByItems = new List<string> { "VendorCode" };
+			var joinItems = new Dictionary<string, string> {{"Vendors", "VendorID = VendorCode"}};
 
 			var startPeriod = new DateTime(2020, 10, 01);
 			var endPeriod = new DateTime(2021, 08, 01);
 			int pageSize = 10, pageNumber = 2;
-			new TransactionAnalysisHelper().AnalysisTransactionsInYearPeriod(selectItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod, pageSize, pageNumber);
+			var data = new TransactionAnalysisHelper().AnalysisTransactionsInYearPeriod(selectItems, joinItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod);
+
+			this.dgvTransactionData.DataSource = data;
 		}
 	}
 }

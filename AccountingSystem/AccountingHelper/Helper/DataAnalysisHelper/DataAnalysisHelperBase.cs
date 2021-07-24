@@ -9,6 +9,17 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 			return $"{string.Format(select, string.Join(", ", selectItems))}";
 		}
 
+		protected string GenerateJoinClause(Dictionary<string, string> joinItems)
+		{
+			var join = "";
+			foreach (var item in joinItems)
+			{
+				join += $"\nJOIN\n\t{item.Key} ON {item.Value}";
+			}
+
+			return join;
+		}
+
 		protected string GenerateWhereClause(List<string> whereItems)
 		{
 			return $"\nWHERE\n\t{string.Join(", ", whereItems)}";

@@ -47,12 +47,12 @@ namespace AccountingHelper.Helper.ModelHelper
 				}
 				trans.YearPeriod = yearPeriod;
 
-				if (!TryDecodeVendorID(model.Description, out var vendorID))
+				if (!TryDecodeVendorID(model.Description, out var vendorCode))
 				{
-					_logger.Error($"Decoding VendorID faild, check above log for more information");
+					_logger.Error($"Decoding VendorCode faild, check above log for more information");
 					continue;
 				}
-				trans.VendorID = vendorID;
+				trans.VendorCode = vendorCode;
 
 				if (!string.IsNullOrWhiteSpace(model.Reference))
 				{
@@ -100,20 +100,20 @@ namespace AccountingHelper.Helper.ModelHelper
 			}
 		}
 
-		private bool TryDecodeVendorID(string input, out string vendorID)
+		private bool TryDecodeVendorID(string input, out string vendorCode)
 		{
-			vendorID = default(String);
+			vendorCode = default(String);
 			try
 			{
-				_logger.Debug($"Start decoding VendorID from input: {input}");
+				_logger.Debug($"Start decoding VendorCode from input: {input}");
 				var vendorInfo = input.Split('*', StringSplitOptions.RemoveEmptyEntries);
 				foreach (var info in vendorInfo)
 				{
 					if (!IsVendorID(info))
 						continue;
 					_logger.Debug($"Decode vendor ID: {info} from Description");
-					vendorID = info;
-					_logger.Debug($"Decode input: {input} to VendorID: {vendorID}");
+					vendorCode = info;
+					_logger.Debug($"Decode input: {input} to VendorCode: {vendorCode}");
 					return true;
 				}
 
@@ -123,8 +123,8 @@ namespace AccountingHelper.Helper.ModelHelper
 					var vendor = _vendorService.GetByVendorName(info);
 					if (vendor == null)
 						continue;
-					vendorID = vendor.VendorID;
-					_logger.Debug($"Get VendorID: {vendorID} from DB by VendorName: {info}");
+					vendorCode = vendor.VendorID;
+					_logger.Debug($"Get VendorCode: {vendorCode} from DB by VendorName: {info}");
 					return true;
 				}
 
@@ -133,7 +133,7 @@ namespace AccountingHelper.Helper.ModelHelper
 			}
 			catch (Exception ex)
 			{
-				_logger.Error($"Exception happend during decoding VendorID from model Description: {input}. Ex:{ex.Message}");
+				_logger.Error($"Exception happend during decoding VendorCode from model Description: {input}. Ex:{ex.Message}");
 				return false;
 			}
 		}

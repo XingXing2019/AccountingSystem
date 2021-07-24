@@ -99,7 +99,7 @@ namespace AccountingDatabase.Migrations
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("VendorID")
+                    b.Property<string>("VendorCode")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");

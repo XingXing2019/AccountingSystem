@@ -11,7 +11,7 @@ namespace AccountingDatabase.SqlExecutor
 		private const string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=AccountingSystem";
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public Dictionary<string, List<string>> ExecuteSelectQuery(string selectSql)
+		public DataTable ExecuteSelectQuery(string selectSql)
 		{
 			try
 			{
@@ -29,30 +29,13 @@ namespace AccountingDatabase.SqlExecutor
 				if (!reader.HasRows)
 				{
 					_logger.Debug($"No record return from sql: {selectSql}");
-					return columnValues;
+					return dataTable;
 				}
 
 				dataTable.Load(reader);
 				reader.Close();
 
-				var titleColumns = new Dictionary<int, string>();
-				for (int i = 0; i < dataTable.Columns.Count; i++)
-				{
-					var title = dataTable.Columns[i].ToString();
-					titleColumns[i] = title;
-					columnValues[title] = new List<string>();
-				}
-				
-				foreach (DataRow row in dataTable.Rows)
-				{
-					for (int i = 0; i < row.ItemArray.Length; i++)
-					{
-						var title = titleColumns[i];
-						columnValues[title].Add(row.ItemArray[i].ToString());
-					}
-				}
-
-				return columnValues;
+				return dataTable;
 			}
 			catch (Exception ex)
 			{
