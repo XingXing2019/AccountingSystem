@@ -15,7 +15,7 @@ namespace AccountingDatabase.Entity
 		public string ShortName { get; set; }
 
 		[Required, MaxLength(20)]
-		public string IDGRP { get; set; }
+		public string GroupID { get; set; }
 
 		[Required]
 		public bool Active { get; set; }

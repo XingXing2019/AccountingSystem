@@ -9,7 +9,7 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 {
 	public class TransactionAnalysisHelper : DataAnalysisHelperBase
 	{
-		public DataTable AnalysisTransactionsInYearPeriod(List<string> selectItems, Dictionary<string, string> joinItems, List<string> whereItems, List<string> groupByItems, List<string> orderByItems, DateTime startPeriod, DateTime endPeriod, int pageSize = 0, int pageNumber = 0)
+		public DataTable AnalyzeTransactionsInYearPeriod(List<string> selectItems, Dictionary<string, string> joinItems, List<string> whereItems, List<string> groupByItems, List<string> orderByItems, DateTime startPeriod, DateTime endPeriod, int pageSize = 0, int pageNumber = 0)
 		{
 			var select = GenerateSelectClause(TransactionSqls.SELECT_TRANSACTIONS, selectItems);
 			var join = GenerateJoinClause(joinItems);
@@ -25,7 +25,7 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 				var pagination = GeneratePaginationClause(pageSize, pageNumber);
 				sql += pagination;
 			}
-			var values = new SqlExecutor().ExecuteSelectQuery(sql);
+			var values = SqlExecutor.ExecuteSelectQuery(sql);
 			return values;
 		}
 

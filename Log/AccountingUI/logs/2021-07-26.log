@@ -1,0 +1,54 @@
+2021-07-26 18:24:45.2320|DEBUG|Start execute sql: SELECT
+	DISTINCT GroupID
+FROM
+	Vendors
+ORDER BY
+	GroupID
+2021-07-26 18:25:38.1195|DEBUG|Start execute sql: SELECT
+	DISTINCT GroupID
+FROM
+	Vendors
+ORDER BY
+	GroupID
+2021-07-26 18:28:49.6891|DEBUG|Start execute sql: SELECT
+	DISTINCT GroupID
+FROM
+	Vendors
+ORDER BY
+	GroupID
+2021-07-26 18:38:10.1939|DEBUG|Start execute sql: SELECT
+	DISTINCT GroupID
+FROM
+	Vendors
+ORDER BY
+	GroupID
+2021-07-26 18:38:12.8209|DEBUG|Start execute sql: WITH Data AS (SELECT
+	VendorCode, VendorName, COUNT(DISTINCT InvoiceNo) AS Invoices, SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod
+FROM
+	Transactions
+JOIN
+	Vendors ON VendorID = VendorCode
+WHERE
+	VendorCode IS NOT NULL
+GROUP BY
+	VendorCode, VendorName, YearPeriod)
+SELECT
+	*
+FROM
+	Data
+PIVOT
+	(SUM([invoices]) FOR YearPeriod IN ([2020-10],[2020-11],[2020-12],[2021-01],[2021-02],[2021-03],[2021-04],[2021-05],[2021-06],[2021-07],[2021-08])) AS PivotTable
+ORDER BY
+	VendorCode
+2021-07-26 18:46:43.9197|DEBUG|Start execute sql: SELECT
+	DISTINCT GroupID
+FROM
+	Vendors
+ORDER BY
+	GroupID
+2021-07-26 20:49:10.9508|DEBUG|Start execute sql: SELECT
+	DISTINCT GroupID
+FROM
+	Vendors
+ORDER BY
+	GroupID

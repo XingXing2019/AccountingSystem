@@ -28,7 +28,7 @@ namespace AccountingHelper.Helper.ModelHelper
 					VendorID = model.VendorID,
 					VendorName = model.VendName,
 					ShortName = model.ShortName,
-					IDGRP = model.IDGRP,
+					GroupID = model.IDGRP,
 					Active = model.SwActv,
 					OnHold = model.SwHold,
 					CurrencyCode = model.CurnCode,

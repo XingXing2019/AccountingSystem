@@ -1,7 +1,7 @@
 ﻿
 namespace AccountingUI
 {
-	partial class Form1
+	partial class MainForm
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -33,6 +33,7 @@ namespace AccountingUI
 			this.txtExcelFile = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.dgvTransactionData = new System.Windows.Forms.DataGridView();
+			this.cmbGroupId = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -70,19 +71,29 @@ namespace AccountingUI
 			this.dgvTransactionData.Location = new System.Drawing.Point(12, 103);
 			this.dgvTransactionData.Name = "dgvTransactionData";
 			this.dgvTransactionData.RowTemplate.Height = 25;
-			this.dgvTransactionData.Size = new System.Drawing.Size(1201, 286);
+			this.dgvTransactionData.Size = new System.Drawing.Size(1175, 286);
 			this.dgvTransactionData.TabIndex = 3;
 			// 
-			// Form1
+			// cmbGroupId
+			// 
+			this.cmbGroupId.FormattingEnabled = true;
+			this.cmbGroupId.Location = new System.Drawing.Point(418, 46);
+			this.cmbGroupId.Name = "cmbGroupId";
+			this.cmbGroupId.Size = new System.Drawing.Size(121, 23);
+			this.cmbGroupId.TabIndex = 4;
+			this.cmbGroupId.Text = "Group IDs";
+			// 
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1252, 450);
+			this.Controls.Add(this.cmbGroupId);
 			this.Controls.Add(this.dgvTransactionData);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.txtExcelFile);
 			this.Controls.Add(this.btnLoadExcel);
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).EndInit();
 			this.ResumeLayout(false);
@@ -96,6 +107,7 @@ namespace AccountingUI
 		private System.Windows.Forms.TextBox txtExcelFile;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DataGridView dgvTransactionData;
+		private System.Windows.Forms.ComboBox cmbGroupId;
 	}
 }
 

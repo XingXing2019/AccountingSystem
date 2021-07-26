@@ -13,9 +13,7 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 		{
 			var join = "";
 			foreach (var item in joinItems)
-			{
 				join += $"\nJOIN\n\t{item.Key} ON {item.Value}";
-			}
 
 			return join;
 		}

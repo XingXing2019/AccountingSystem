@@ -9,9 +9,9 @@ namespace AccountingDatabase.SqlExecutor
 	public class SqlExecutor
 	{
 		private const string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=AccountingSystem";
-		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+		private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public DataTable ExecuteSelectQuery(string selectSql)
+		public static DataTable ExecuteSelectQuery(string selectSql)
 		{
 			try
 			{
@@ -44,7 +44,7 @@ namespace AccountingDatabase.SqlExecutor
 			}
 		}
 
-		public void ExecuteDeleteUpdateInsertQuery(string sql)
+		public static void ExecuteDeleteUpdateInsertQuery(string sql)
 		{
 			try
 			{

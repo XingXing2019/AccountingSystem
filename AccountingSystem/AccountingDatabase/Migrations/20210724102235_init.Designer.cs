@@ -151,7 +151,7 @@ namespace AccountingDatabase.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IDGRP")
+                    b.Property<string>("GroupID")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");

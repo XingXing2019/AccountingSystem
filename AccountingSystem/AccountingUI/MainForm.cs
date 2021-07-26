@@ -6,23 +6,27 @@ using AccountingDatabase.Services.Interface;
 using AccountingHelper.Helper.DataAnalysisHelper;
 using AccountingHelper.Helper.ExcelHelper;
 using AccountingHelper.Helper.ModelHelper;
+using AccountingHelper.Helper.UIHelper;
 using AccountingHelper.Model;
 using NLog;
 
 namespace AccountingUI
 {
-	public partial class Form1 : Form
+	public partial class MainForm : Form
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 		
-		private readonly ITransactionService _transactionService = new TransactionService();
-		private readonly IGlAccountService _glAccountService = new GlAccountService();
-		private string path;
+		//private readonly ITransactionService _transactionService = new TransactionService();
+		//private readonly IGlAccountService _glAccountService = new GlAccountService();
+		//private string path;
 
+		private readonly AccountingUIHelper _uiHelper;
 		
-		public Form1()
+		public MainForm()
 		{
 			InitializeComponent();
+			_uiHelper = new AccountingUIHelper();
+			this.cmbGroupId.DataSource = _uiHelper.LoadGroupIDs();
 		}
 
 		private void btnLoadExcel_Click(object sender, EventArgs e)
@@ -30,7 +34,7 @@ namespace AccountingUI
 			var file = new OpenFileDialog();
 			file.ShowDialog();
 			this.txtExcelFile.Text = file.SafeFileName;
-			this.path = file.FileName;
+			//this.path = file.FileName;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -52,7 +56,9 @@ namespace AccountingUI
 
 			var selectItems = new List<string>
 			{
-				"VendorCode", "VendorName", "COUNT(DISTINCT InvoiceNo) AS Invoices",
+				"VendorCode", 
+				"VendorName", 
+				"COUNT(DISTINCT InvoiceNo) AS Invoices",
 				"SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod"
 			};
 			var criterion = new List<string> { "VendorCode IS NOT NULL" };
@@ -63,8 +69,10 @@ namespace AccountingUI
 			var startPeriod = new DateTime(2020, 10, 01);
 			var endPeriod = new DateTime(2021, 08, 01);
 			int pageSize = 10, pageNumber = 2;
-			var data = new TransactionAnalysisHelper().AnalysisTransactionsInYearPeriod(selectItems, joinItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod);
+			var data = new TransactionAnalysisHelper().AnalyzeTransactionsInYearPeriod(selectItems, joinItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod);
 
+
+			//var data = new VendorAnalysisHelper().AnalyzeVendorGroups();
 			this.dgvTransactionData.DataSource = data;
 		}
 	}
