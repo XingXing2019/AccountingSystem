@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountingWpfUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="950"
         WindowStyle="None"
         x:Name="Window">
 
@@ -14,16 +14,13 @@
 
         <!--Background-->
         <Grid.Background>
-            <ImageBrush ImageSource="Images/Background.jpg" />
+            <ImageBrush ImageSource="Images/Background/Background.jpg" />
         </Grid.Background>
 
         <!--Define Columns and Rows-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2.5*"/>
-            <ColumnDefinition Width="0"/>
-            <ColumnDefinition Width="0"/>
-            <ColumnDefinition Width="0"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="3.5*"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -32,16 +29,46 @@
 
         <!--Row 1 Min, Max and Close Buttons-->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.ColumnSpan="5">
-            <Button x:Name="btnMin" Width="45" Height="40" Content="─" Foreground="Black" BorderThickness="0" Background="Transparent" FontSize="15" VerticalAlignment="Center"
+            <Button x:Name="btnMin" Width="45" Height="40" Content="─" Foreground="White" BorderThickness="0" Background="Transparent" FontSize="15" VerticalAlignment="Center"
                     Command="{Binding WindowMinCommand}" CommandParameter="{Binding ElementName=Window}"/>
-            <Button x:Name="btnMax" Width="45" Height="30" Content="☐" Foreground="Black" BorderThickness="0" Background="Transparent" FontSize="15" VerticalAlignment="Center"
+            <Button x:Name="btnMax" Width="45" Height="30" Content="☐" Foreground="White" BorderThickness="0" Background="Transparent" FontSize="15" VerticalAlignment="Center"
                     Command="{Binding WindowMaxCommand}" CommandParameter="{Binding ElementName=Window}"/>
-            <Button x:Name="btnClose" Width="45" Height="30" Content="✕" Foreground="Black" BorderThickness="0" Background="Transparent" FontSize="15" VerticalAlignment="Center"
+            <Button x:Name="btnClose" Width="45" Height="30" Content="✕" Foreground="White" BorderThickness="0" Background="Transparent" FontSize="15" VerticalAlignment="Center"
                     Command="{Binding WindowCloseCommand}" />
         </StackPanel>
-        
-        
-    
+
+        <StackPanel Grid.Row="1" Margin="15 0 5 0">
+
+            <!--Logo and Title-->
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/Logo/Logo.png" Height="60"/>
+                <TextBlock Text="REX ACCOUNTING" Foreground="White" VerticalAlignment="Center" Margin="20 0" FontSize="30" FontWeight="Bold"/>
+            </StackPanel>
+
+            <TabControl Margin="0 15 0 0" Background="Transparent" BorderThickness="0" FontSize="13">
+
+                <TabItem Header="Transaction" Foreground="Black" FontSize="16" FontWeight="Bold" Width="100">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        
+                    </Grid>
+
+                </TabItem>
+
+                <TabItem Header="Vendor" Foreground="Black" FontSize="16" FontWeight="Bold"  Width="100">
+
+                </TabItem>
+
+            </TabControl>
+
+
+        </StackPanel>
+
+
 
     </Grid>
 </Window>

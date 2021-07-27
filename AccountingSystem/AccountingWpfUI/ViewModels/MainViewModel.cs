@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows;
+using System.Windows.Controls;
+using AccountingHelper.Helper.DataAnalysisHelper;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
@@ -67,6 +71,31 @@ namespace AccountingWpfUI.ViewModels
 		private void WindowMaxCloseHandler()
 		{
 			Environment.Exit(Environment.ExitCode);
+		}
+
+
+		public DataTable Data { get; set; }
+
+		public MainViewModel()
+		{
+			var selectItems = new List<string>
+			{
+				"VendorCode",
+				"VendorName",
+				"COUNT(DISTINCT InvoiceNo) AS Invoices",
+				"SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod"
+			};
+			var criterion = new List<string> { "VendorCode IS NOT NULL" };
+			var groupByItems = new List<string> { "VendorCode", "VendorName", "YearPeriod" };
+			var orderByItems = new List<string> { "VendorCode" };
+			var joinItems = new Dictionary<string, string> { { "Vendors", "VendorID = VendorCode" } };
+
+			var startPeriod = new DateTime(2020, 10, 01);
+			var endPeriod = new DateTime(2021, 08, 01);
+			int pageSize = 10, pageNumber = 2;
+			var data = new TransactionAnalysisHelper().AnalyzeTransactionsInYearPeriod(selectItems, joinItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod);
+
+			Data = data;
 		}
 	}
 }

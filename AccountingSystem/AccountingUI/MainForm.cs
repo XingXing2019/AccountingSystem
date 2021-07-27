@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using AccountingDatabase.Services;
 using AccountingDatabase.Services.Interface;
@@ -39,10 +42,15 @@ namespace AccountingUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			//var vendorPath = @"C:\Users\61425\Desktop\RAL-VENDOR.xlsx";
-			//var vendorModels = new ExcelHelper<VendorModel>().ReadExcel(vendorPath);
+			var vendorPath = @"C:\Users\61425\Desktop\RAL-VENDOR.xlsx";
+			var modelHelper = new VendorModelHelper();
+			new AccountingUIHelper().UploadExcelDataToDB(modelHelper, vendorPath);
+			
+			//var vendorModels = ExcelReader<VendorModel>.ReadExcel(vendorPath);
 			//var vendors = new VendorModelHelper().TransformValidModels(vendorModels);
 			//new VendorService().PostAll(vendors);
+
+
 
 			//var glAccountPath = @"C:\Users\61425\Desktop\GL.xls";
 			//var glAccountModels = new ExcelHelper<GLAccountModel>().ReadExcel(glAccountPath);
@@ -54,26 +62,33 @@ namespace AccountingUI
 			//var transactions = new TransactionModelHelper().TransformValidModels(transactionModels);
 			//new TransactionService().PostAll(transactions);
 
-			var selectItems = new List<string>
-			{
-				"VendorCode", 
-				"VendorName", 
-				"COUNT(DISTINCT InvoiceNo) AS Invoices",
-				"SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod"
-			};
-			var criterion = new List<string> { "VendorCode IS NOT NULL" };
-			var groupByItems = new List<string> { "VendorCode", "VendorName", "YearPeriod" };
-			var orderByItems = new List<string> { "VendorCode" };
-			var joinItems = new Dictionary<string, string> {{"Vendors", "VendorID = VendorCode"}};
+			//var selectItems = new List<string>
+			//{
+			//	"VendorCode", 
+			//	"VendorName", 
+			//	"COUNT(DISTINCT InvoiceNo) AS Invoices",
+			//	"SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod"
+			//};
+			//var criterion = new List<string> { "VendorCode IS NOT NULL" };
+			//var groupByItems = new List<string> { "VendorCode", "VendorName", "YearPeriod" };
+			//var orderByItems = new List<string> { "VendorCode" };
+			//var joinItems = new Dictionary<string, string> {{"Vendors", "VendorID = VendorCode"}};
 
-			var startPeriod = new DateTime(2020, 10, 01);
-			var endPeriod = new DateTime(2021, 08, 01);
-			int pageSize = 10, pageNumber = 2;
-			var data = new TransactionAnalysisHelper().AnalyzeTransactionsInYearPeriod(selectItems, joinItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod);
+			//var startPeriod = new DateTime(2020, 10, 01);
+			//var endPeriod = new DateTime(2021, 08, 01);
+			//int pageSize = 10, pageNumber = 2;
+			//var data = new TransactionAnalysisHelper().AnalyzeTransactionsInYearPeriod(selectItems, joinItems, criterion, groupByItems, orderByItems, startPeriod, endPeriod);
 
 
-			//var data = new VendorAnalysisHelper().AnalyzeVendorGroups();
-			this.dgvTransactionData.DataSource = data;
+			////var data = new VendorAnalysisHelper().AnalyzeVendorGroups();
+			//this.dgvTransactionData.DataSource = data;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			var data = this.dgvTransactionData.DataSource as DataTable;
+			var filePath = @"D:\C#\Projects\AccountingSystem\Data\Res.csv";
+			ExcelWriter.WriteExcel(filePath, data);
 		}
 	}
 }

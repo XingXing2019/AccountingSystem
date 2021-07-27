@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
+using AccountingHelper.Helper.DataAnalysisHelper;
 using AccountingWpfUI.ViewModels;
 
 namespace AccountingWpfUI
@@ -12,6 +15,8 @@ namespace AccountingWpfUI
 		{
 			InitializeComponent();
 			this.DataContext = new MainViewModel();
+
+			
 		}
 	}
 }

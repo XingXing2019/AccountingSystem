@@ -1,17 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AccountingDatabase.Entity;
+﻿using AccountingDatabase.Entity;
 
 namespace AccountingDatabase.Services.Interface
 {
-	public interface IGlAccountService
+	public interface IGlAccountService : IService<GLAccount>
 	{
-		GLAccount GetByID(string id);
 
-		IQueryable<GLAccount> GetAll();
-
-		bool Post(GLAccount item);
-
-		bool PostAll(IList<GLAccount> items);
 	}
 }

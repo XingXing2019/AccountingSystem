@@ -4,10 +4,10 @@ D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\bin\Debug\ne
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\bin\Debug\netcoreapp3.1\AccountingDatabase.runtimeconfig.dev.json
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\bin\Debug\netcoreapp3.1\AccountingDatabase.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\bin\Debug\netcoreapp3.1\AccountingDatabase.pdb
-D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.csproj.AssemblyReference.cache
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.AssemblyInfoInputs.cache
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.AssemblyInfo.cs
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.csproj.CoreCompileInputs.cache
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.pdb
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.genruntimeconfig.cache
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.csproj.AssemblyReference.cache

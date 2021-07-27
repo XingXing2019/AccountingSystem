@@ -34,6 +34,7 @@ namespace AccountingUI
 			this.button1 = new System.Windows.Forms.Button();
 			this.dgvTransactionData = new System.Windows.Forms.DataGridView();
 			this.cmbGroupId = new System.Windows.Forms.ComboBox();
+			this.button2 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -83,11 +84,22 @@ namespace AccountingUI
 			this.cmbGroupId.TabIndex = 4;
 			this.cmbGroupId.Text = "Group IDs";
 			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(575, 43);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 5;
+			this.button2.Text = "button2";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1252, 450);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.cmbGroupId);
 			this.Controls.Add(this.dgvTransactionData);
 			this.Controls.Add(this.button1);
@@ -108,6 +120,7 @@ namespace AccountingUI
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DataGridView dgvTransactionData;
 		private System.Windows.Forms.ComboBox cmbGroupId;
+		private System.Windows.Forms.Button button2;
 	}
 }
 
