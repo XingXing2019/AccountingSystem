@@ -1,17 +1,15 @@
-﻿using AccountingHelper.Helper.DataAnalysisHelper;
+﻿using AccountingDatabase.Entity;
+using AccountingDatabase.Services;
+using AccountingHelper.Helper.DataAnalysisHelper;
 using AccountingHelper.Helper.ExcelHelper;
 using AccountingHelper.Helper.ModelHelper;
+using AccountingHelper.Model;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
-using AccountingDatabase.Entity;
-using AccountingDatabase.Services;
-using AccountingDatabase.Services.Interface;
-using AccountingHelper.Model;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace AccountingHelper.Helper.UIHelper
 {
@@ -40,6 +38,42 @@ namespace AccountingHelper.Helper.UIHelper
 			return groupIds;
 		}
 
+		public List<string> LoadModelNames()
+		{
+			try
+			{
+				var assemblyName = "AccountingDatabase";
+				var ns = "AccountingDatabase.Entity";
+				var assembly = Assembly.Load(assemblyName);
+				return assembly.GetTypes().Where(x => x.IsClass && x.Namespace == ns).Select(x => x.Name).ToList();
+			}
+			catch (Exception ex)
+			{
+				_logger.Error($"Exception happened during load model names using reflection. Ex: {ex.Message}");
+				return null;
+			}
+		}
+
+		public void UploadExcelDataToDatabase(string modelName, string filePath)
+		{
+			switch (modelName)
+			{
+				case "Vendor":
+					Upload(new VendorModelHelper(), filePath);
+					return;
+				case "GLAccount":
+					Upload(new GlAccountModelHelper(), filePath);
+					return;
+				case "Transaction":
+					Upload(new TransactionModelHelper(), filePath);
+					return;
+				default:
+					return;
+			}
+		}
+
+		#region Helper
+
 		private void Upload<S, T>(IModelHelper<S, T> modelHelper, string filePath)
 		{
 			try
@@ -62,22 +96,6 @@ namespace AccountingHelper.Helper.UIHelper
 			}
 		}
 
-		public void UploadExcelDataToDatabase(string modelName, string filePath)
-		{
-			switch (modelName)
-			{
-				case "Vendor":
-					Upload(ModelHelperFactory.CreateModelHelper<VendorModel, Vendor>(), filePath);
-					return;
-				case "GLAccount":
-					Upload(ModelHelperFactory.CreateModelHelper<GLAccountModel, GLAccount>(), filePath);
-					return;
-				case "Transaction":
-					Upload(ModelHelperFactory.CreateModelHelper<TransactionModel, Transaction>(), filePath);
-					return;
-				default:
-					return;
-			}
-		}
+		#endregion
 	}
 }
