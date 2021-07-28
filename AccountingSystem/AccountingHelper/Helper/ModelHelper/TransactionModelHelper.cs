@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using AccountingDatabase.Entity;
 using AccountingDatabase.Services;
@@ -16,7 +17,7 @@ namespace AccountingHelper.Helper.ModelHelper
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
 
-		public List<Transaction> TransformValidModels(List<TransactionModel> source)
+		public List<Transaction> TransformValidModels(IList<TransactionModel> source)
 		{
 			var transactions = new List<Transaction>();
 			foreach (var model in source)

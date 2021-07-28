@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AccountingDatabase.Entity;
 using AccountingDatabase.Services;
 using AccountingDatabase.Services.Interface;
@@ -12,7 +13,7 @@ namespace AccountingHelper.Helper.ModelHelper
 		private readonly IGlAccountService _glAccountService = new GlAccountService();
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public List<GLAccount> TransformValidModels(List<GLAccountModel> source)
+		public List<GLAccount> TransformValidModels(IList<GLAccountModel> source)
 		{
 			var glAccounts = new List<GLAccount>();
 			foreach (var model in source)

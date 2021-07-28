@@ -77,7 +77,7 @@ namespace AccountingDatabase.Services
 			return false;
 		}
 
-		public bool PostAll(IList<Vendor> items)
+		public bool PostAll(IEnumerable<Vendor> items)
 		{
 			try
 			{

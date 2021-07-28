@@ -62,7 +62,7 @@ namespace AccountingDatabase.Services
 			return false;
 		}
 
-		public bool PostAll(IList<GLAccount> items)
+		public bool PostAll(IEnumerable<GLAccount> items)
 		{
 			try
 			{

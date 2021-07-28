@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AccountingDatabase.Entity;
 using AccountingDatabase.Services;
 using AccountingDatabase.Services.Interface;
@@ -12,7 +13,7 @@ namespace AccountingHelper.Helper.ModelHelper
 		private readonly IVendorService _vendorService = new VendorService();
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public List<Vendor> TransformValidModels(List<VendorModel> source)
+		public List<Vendor> TransformValidModels(IList<VendorModel> source)
 		{
 			var vendors = new List<Vendor>();
 			foreach (var model in source)

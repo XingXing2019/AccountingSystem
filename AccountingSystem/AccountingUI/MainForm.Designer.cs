@@ -35,12 +35,13 @@ namespace AccountingUI
 			this.dgvTransactionData = new System.Windows.Forms.DataGridView();
 			this.cmbGroupId = new System.Windows.Forms.ComboBox();
 			this.button2 = new System.Windows.Forms.Button();
+			this.cmbModelName = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnLoadExcel
 			// 
-			this.btnLoadExcel.Location = new System.Drawing.Point(202, 46);
+			this.btnLoadExcel.Location = new System.Drawing.Point(152, 42);
 			this.btnLoadExcel.Name = "btnLoadExcel";
 			this.btnLoadExcel.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.btnLoadExcel.Size = new System.Drawing.Size(75, 23);
@@ -51,14 +52,15 @@ namespace AccountingUI
 			// 
 			// txtExcelFile
 			// 
-			this.txtExcelFile.Location = new System.Drawing.Point(64, 47);
+			this.txtExcelFile.Location = new System.Drawing.Point(12, 12);
 			this.txtExcelFile.Name = "txtExcelFile";
-			this.txtExcelFile.Size = new System.Drawing.Size(100, 23);
+			this.txtExcelFile.Size = new System.Drawing.Size(215, 23);
 			this.txtExcelFile.TabIndex = 1;
+			this.txtExcelFile.Click += new System.EventHandler(this.txtExcelFile_Click);
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(305, 46);
+			this.button1.Location = new System.Drawing.Point(254, 40);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 2;
@@ -78,7 +80,7 @@ namespace AccountingUI
 			// cmbGroupId
 			// 
 			this.cmbGroupId.FormattingEnabled = true;
-			this.cmbGroupId.Location = new System.Drawing.Point(418, 46);
+			this.cmbGroupId.Location = new System.Drawing.Point(864, 43);
 			this.cmbGroupId.Name = "cmbGroupId";
 			this.cmbGroupId.Size = new System.Drawing.Size(121, 23);
 			this.cmbGroupId.TabIndex = 4;
@@ -94,11 +96,20 @@ namespace AccountingUI
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// cmbModelName
+			// 
+			this.cmbModelName.FormattingEnabled = true;
+			this.cmbModelName.Location = new System.Drawing.Point(12, 41);
+			this.cmbModelName.Name = "cmbModelName";
+			this.cmbModelName.Size = new System.Drawing.Size(134, 23);
+			this.cmbModelName.TabIndex = 6;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1252, 450);
+			this.Controls.Add(this.cmbModelName);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.cmbGroupId);
 			this.Controls.Add(this.dgvTransactionData);
@@ -121,6 +132,7 @@ namespace AccountingUI
 		private System.Windows.Forms.DataGridView dgvTransactionData;
 		private System.Windows.Forms.ComboBox cmbGroupId;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.ComboBox cmbModelName;
 	}
 }
 

@@ -82,7 +82,7 @@ namespace AccountingDatabase.Services
 			return false;
 		}
 
-		public bool PostAll(IList<Transaction> items)
+		public bool PostAll(IEnumerable<Transaction> items)
 		{
 			try
 			{

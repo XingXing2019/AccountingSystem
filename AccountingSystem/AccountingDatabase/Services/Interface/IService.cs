@@ -9,6 +9,6 @@ namespace AccountingDatabase.Services.Interface
 		IQueryable<T> GetAll();
 
 		bool Post(T item);
-		bool PostAll(IList<T> items);
+		bool PostAll(IEnumerable<T> items);
 	}
 }

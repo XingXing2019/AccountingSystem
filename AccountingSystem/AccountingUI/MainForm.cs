@@ -4,6 +4,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using AccountingDatabase.Entity;
 using AccountingDatabase.Services;
 using AccountingDatabase.Services.Interface;
 using AccountingHelper.Helper.DataAnalysisHelper;
@@ -18,34 +19,33 @@ namespace AccountingUI
 	public partial class MainForm : Form
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		
-		//private readonly ITransactionService _transactionService = new TransactionService();
-		//private readonly IGlAccountService _glAccountService = new GlAccountService();
-		//private string path;
+
+		private readonly AccountingUIHelper _accountingUIHelper = new AccountingUIHelper();
+		private string path;
 
 		private readonly AccountingUIHelper _uiHelper;
 		
 		public MainForm()
 		{
 			InitializeComponent();
-			_uiHelper = new AccountingUIHelper();
-			this.cmbGroupId.DataSource = _uiHelper.LoadGroupIDs();
+			this.cmbGroupId.DataSource = _accountingUIHelper.LoadGroupIDs();
+			this.cmbModelName.DataSource = new List<string> {"Vendor", "Transaction", "GLAccount"};
 		}
 
 		private void btnLoadExcel_Click(object sender, EventArgs e)
 		{
-			var file = new OpenFileDialog();
-			file.ShowDialog();
-			this.txtExcelFile.Text = file.SafeFileName;
-			//this.path = file.FileName;
+			var path = this.path;
+			var modelName = this.cmbModelName.Text;
+			_accountingUIHelper.UploadExcelDataToDatabase(modelName, path);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			var vendorPath = @"C:\Users\61425\Desktop\RAL-VENDOR.xlsx";
-			var modelHelper = new VendorModelHelper();
-			new AccountingUIHelper().UploadExcelDataToDB(modelHelper, vendorPath);
 			
+
+
+
+
 			//var vendorModels = ExcelReader<VendorModel>.ReadExcel(vendorPath);
 			//var vendors = new VendorModelHelper().TransformValidModels(vendorModels);
 			//new VendorService().PostAll(vendors);
@@ -89,6 +89,14 @@ namespace AccountingUI
 			var data = this.dgvTransactionData.DataSource as DataTable;
 			var filePath = @"D:\C#\Projects\AccountingSystem\Data\Res.csv";
 			ExcelWriter.WriteExcel(filePath, data);
+		}
+		
+		private void txtExcelFile_Click(object sender, EventArgs e)
+		{
+			var file = new OpenFileDialog();
+			file.ShowDialog();
+			this.txtExcelFile.Text = file.SafeFileName;
+			this.path = file.FileName;
 		}
 	}
 }

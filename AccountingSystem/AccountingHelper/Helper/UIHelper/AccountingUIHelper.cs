@@ -7,8 +7,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using AccountingDatabase.Entity;
 using AccountingDatabase.Services;
 using AccountingDatabase.Services.Interface;
+using AccountingHelper.Model;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace AccountingHelper.Helper.UIHelper
 {
@@ -37,29 +40,43 @@ namespace AccountingHelper.Helper.UIHelper
 			return groupIds;
 		}
 
-		public void UploadExcelDataToDB<S, T>(IModelHelper<S, T> modelHelper, string filePath)
+		private void Upload<S, T>(IModelHelper<S, T> modelHelper, string filePath)
 		{
 			try
 			{
 				var models = ExcelReader<S>.ReadExcel(filePath);
 				var entities = modelHelper.TransformValidModels(models);
-				var serviceName = $"{typeof(T).Name}Service";
 
-				var assembly = Assembly.Load("AccountingDatabase");
-				var type = assembly.DefinedTypes.FirstOrDefault(x => x.Name == serviceName);
-				
-				if (type == null)
+				var service = ServiceFactory.CreateService<T>();
+				if (service == null)
 				{
-					_logger.Error($"Could be get service from its name: {serviceName}");
+					_logger.Error($"Could be create service for {nameof(T)}");
 					return;
 				}
 
-				if (Activator.CreateInstance(type) is IService<T> service) 
-					service.PostAll(entities);
+				service.PostAll(entities);
 			}
 			catch (Exception ex)
 			{
 				_logger.Error($"Exception happened during uplaod excel data to database. Ex: {ex.Message}");
+			}
+		}
+
+		public void UploadExcelDataToDatabase(string modelName, string filePath)
+		{
+			switch (modelName)
+			{
+				case "Vendor":
+					Upload(ModelHelperFactory.CreateModelHelper<VendorModel, Vendor>(), filePath);
+					return;
+				case "GLAccount":
+					Upload(ModelHelperFactory.CreateModelHelper<GLAccountModel, GLAccount>(), filePath);
+					return;
+				case "Transaction":
+					Upload(ModelHelperFactory.CreateModelHelper<TransactionModel, Transaction>(), filePath);
+					return;
+				default:
+					return;
 			}
 		}
 	}
