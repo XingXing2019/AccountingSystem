@@ -1,8 +1,0 @@
-2021-07-20 21:01:42.6371|ERROR|Failed to read excel file with path: C:\Users\61425\Desktop\GL.xls. Ex: The process cannot access the file 'C:\Users\61425\Desktop\GL.xls' because it is being used by another process.
-2021-07-20 21:01:42.6649|ERROR|Failed to read excel file with path: C:\Users\61425\Desktop\GL.xls.
-2021-07-20 21:02:00.5013|ERROR|Failed to read excel file with path: C:\Users\61425\Desktop\GL.xls. Ex: The process cannot access the file 'C:\Users\61425\Desktop\GL.xls' because it is being used by another process.
-2021-07-20 21:02:00.5212|ERROR|Failed to read excel file with path: C:\Users\61425\Desktop\GL.xls.
-2021-07-20 21:40:10.7602|INFO |Succesed to post transactions. 5652 row affected
-2021-07-20 21:41:52.5122|INFO |Succesed to post gls. 1085 row affected
-2021-07-20 21:58:01.6020|INFO |Succesed to post transactions. 5652 row affected
-2021-07-20 22:10:57.8522|INFO |Succesed to post transactions. 5652 row affected
