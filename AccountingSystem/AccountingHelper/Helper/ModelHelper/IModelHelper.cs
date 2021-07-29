@@ -4,6 +4,6 @@ namespace AccountingHelper.Helper.ModelHelper
 {
 	public interface IModelHelper<S, T>
 	{
-		List<T> TransformValidModels(IList<S> source);
+		bool TransformValidModels(IList<S> source, out List<T> target);
 	}
 }

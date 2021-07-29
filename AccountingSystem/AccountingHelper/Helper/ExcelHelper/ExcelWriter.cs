@@ -10,7 +10,7 @@ namespace AccountingHelper.Helper.ExcelHelper
 	public class ExcelWriter
 	{
 		private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
-		public static void WriteExcel(string filePath, DataTable data)
+		public static bool WriteExcel(string filePath, DataTable data)
 		{
 			try
 			{
@@ -28,10 +28,13 @@ namespace AccountingHelper.Helper.ExcelHelper
 				lines.AddRange(valueLines);
 
 				File.WriteAllLines(filePath, lines);
+
+				return true;
 			}
 			catch (Exception ex)
 			{
 				_logger.Error($"Exception happened during write excel to {filePath}. Ex: {ex.Message}");
+				return false;
 			}
 		}
 	}

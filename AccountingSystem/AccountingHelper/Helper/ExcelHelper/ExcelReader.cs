@@ -14,9 +14,9 @@ namespace AccountingHelper.Helper.ExcelHelper
 	{
 		private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public static List<T> ReadExcel(string filePath)
+		public static bool ReadExcel(string filePath, out List<T> results)
 		{
-			var results = new List<T>();
+			results = new List<T>();
 			try
 			{
 				System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
@@ -80,13 +80,14 @@ namespace AccountingHelper.Helper.ExcelHelper
 							results.Add((T)instance);
 					}
 				}
+
+				return true;
 			}
 			catch (Exception ex)
 			{
 				_logger.Error($"Exception happened during read excel: {filePath}. Ex: {ex.Message}");
+				return false;
 			}
-
-			return results;
 		}
 
 

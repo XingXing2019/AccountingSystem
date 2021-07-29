@@ -9,26 +9,24 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 {
 	public class TransactionAnalysisHelper : DataAnalysisHelperBase
 	{
-		public DataTable AnalyzeTransactionsInYearPeriod(List<string> selectItems, Dictionary<string, string> joinItems, List<string> whereItems, List<string> groupByItems, List<string> orderByItems, DateTime startPeriod, DateTime endPeriod, int pageSize = 0, int pageNumber = 0)
+		public DataTable AnalyzeTransactionsInYearPeriod(SqlEntity entity,  DateTime startPeriod, DateTime endPeriod)
 		{
-			var select = GenerateSelectClause(TransactionSqls.SELECT_TRANSACTIONS, selectItems);
-			var join = GenerateJoinClause(joinItems);
-			var where = GenerateWhereClause(whereItems);
-			var groupBy = GenerateGroupByClause(groupByItems);
+			var select = GenerateSelectClause(TransactionSqls.SELECT_TRANSACTIONS, entity.SelectItems);
+			var join = GenerateJoinClause(entity.JoinItems);
+			var where = GenerateWhereClause(entity.WhereItems);
+			var groupBy = GenerateGroupByClause(entity.GroupByItems);
 			var col = GenerateYearPeriodColumns(startPeriod, endPeriod);
-			var orderBy = GenerateOrderByClause(orderByItems);
+			var orderBy = GenerateOrderByClause(entity.OrderByItems);
+			var pagination = GeneratePaginationClause(entity.PageSize, entity.PageNumber);
 
-			var sql = $"WITH Data AS ({select}{join}{where}{groupBy})\n{string.Format(TransactionSqls.PIVOT_COLUMN_ROW, "SUM", "YearPeriod", col)}{orderBy}";
+			var sql = $"WITH Data AS ({select}{join}{where}{groupBy})\n{string.Format(TransactionSqls.PIVOT_COLUMN_ROW, "SUM", "YearPeriod", col)}{orderBy}{pagination}";
 
-			if (pageSize != 0 && pageNumber != 0)
-			{
-				var pagination = GeneratePaginationClause(pageSize, pageNumber);
-				sql += pagination;
-			}
 			var values = SqlExecutor.ExecuteSelectQuery(sql);
 			return values;
 		}
 
+		#region Helper
+		
 		private string GenerateYearPeriodColumns(DateTime startPeriod, DateTime endPeriod)
 		{
 			var cols = new StringBuilder();
@@ -42,5 +40,7 @@ namespace AccountingHelper.Helper.DataAnalysisHelper
 
 			return cols.ToString();
 		}
+
+		#endregion
 	}
 }

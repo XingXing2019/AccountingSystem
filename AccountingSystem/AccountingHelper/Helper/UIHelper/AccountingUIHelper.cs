@@ -54,45 +54,59 @@ namespace AccountingHelper.Helper.UIHelper
 			}
 		}
 
-		public void UploadExcelDataToDatabase(string modelName, string filePath)
+		public bool UploadExcelDataToDatabase(string modelName, string filePath)
 		{
 			switch (modelName)
 			{
 				case "Vendor":
-					Upload(new VendorModelHelper(), filePath);
-					return;
+					return Upload(new VendorModelHelper(), filePath);
 				case "GLAccount":
-					Upload(new GlAccountModelHelper(), filePath);
-					return;
+					return Upload(new GlAccountModelHelper(), filePath);
 				case "Transaction":
-					Upload(new TransactionModelHelper(), filePath);
-					return;
+					return Upload(new TransactionModelHelper(), filePath);
 				default:
-					return;
+					return false;
 			}
+		}
+
+		public bool DownloadDatabaseDataToExcel(DataTable data, string filePath)
+		{
+			return ExcelWriter.WriteExcel(filePath, data);
 		}
 
 		#region Helper
 
-		private void Upload<S, T>(IModelHelper<S, T> modelHelper, string filePath)
+		private bool Upload<S, T>(IModelHelper<S, T> modelHelper, string filePath)
 		{
 			try
 			{
-				var models = ExcelReader<S>.ReadExcel(filePath);
-				var entities = modelHelper.TransformValidModels(models);
+				var isSucceeded = ExcelReader<S>.ReadExcel(filePath, out var models);
+				if (!isSucceeded)
+				{
+					_logger.Error($"Faild to read excel: {filePath}");
+					return false;
+				}
+
+				isSucceeded = modelHelper.TransformValidModels(models, out var entities);
+				if (!isSucceeded)
+				{
+					_logger.Error($"Faild to transform model to entity");
+					return false;
+				}
 
 				var service = ServiceFactory.CreateService<T>();
 				if (service == null)
 				{
 					_logger.Error($"Could be create service for {nameof(T)}");
-					return;
+					return false;
 				}
 
-				service.PostAll(entities);
+				return service.PostAll(entities);
 			}
 			catch (Exception ex)
 			{
 				_logger.Error($"Exception happened during uplaod excel data to database. Ex: {ex.Message}");
+				return false;
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace AccountingUI
 		private void InitializeComponent()
 		{
 			this.btnLoadExcel = new System.Windows.Forms.Button();
-			this.txtExcelFile = new System.Windows.Forms.TextBox();
+			this.txtExcelUploadFile = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.dgvTransactionData = new System.Windows.Forms.DataGridView();
 			this.cmbGroupId = new System.Windows.Forms.ComboBox();
@@ -50,13 +50,13 @@ namespace AccountingUI
 			this.btnLoadExcel.UseVisualStyleBackColor = true;
 			this.btnLoadExcel.Click += new System.EventHandler(this.btnLoadExcel_Click);
 			// 
-			// txtExcelFile
+			// txtExcelUploadFile
 			// 
-			this.txtExcelFile.Location = new System.Drawing.Point(12, 12);
-			this.txtExcelFile.Name = "txtExcelFile";
-			this.txtExcelFile.Size = new System.Drawing.Size(215, 23);
-			this.txtExcelFile.TabIndex = 1;
-			this.txtExcelFile.Click += new System.EventHandler(this.txtExcelFile_Click);
+			this.txtExcelUploadFile.Location = new System.Drawing.Point(12, 12);
+			this.txtExcelUploadFile.Name = "txtExcelUploadFile";
+			this.txtExcelUploadFile.Size = new System.Drawing.Size(215, 23);
+			this.txtExcelUploadFile.TabIndex = 1;
+			this.txtExcelUploadFile.Click += new System.EventHandler(this.txtExcelFile_Click);
 			// 
 			// button1
 			// 
@@ -88,7 +88,7 @@ namespace AccountingUI
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(575, 43);
+			this.button2.Location = new System.Drawing.Point(394, 43);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 5;
@@ -114,7 +114,7 @@ namespace AccountingUI
 			this.Controls.Add(this.cmbGroupId);
 			this.Controls.Add(this.dgvTransactionData);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.txtExcelFile);
+			this.Controls.Add(this.txtExcelUploadFile);
 			this.Controls.Add(this.btnLoadExcel);
 			this.Name = "MainForm";
 			this.Text = "Form1";
@@ -127,7 +127,7 @@ namespace AccountingUI
 		#endregion
 
 		private System.Windows.Forms.Button btnLoadExcel;
-		private System.Windows.Forms.TextBox txtExcelFile;
+		private System.Windows.Forms.TextBox txtExcelUploadFile;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DataGridView dgvTransactionData;
 		private System.Windows.Forms.ComboBox cmbGroupId;

@@ -15,71 +15,80 @@ namespace AccountingHelper.Helper.ModelHelper
 		private readonly IVendorService _vendorService = new VendorService();
 		private readonly ITransactionService _transactionService = new TransactionService();
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-
-
-		public List<Transaction> TransformValidModels(IList<TransactionModel> source)
+		
+		public bool TransformValidModels(IList<TransactionModel> source, out List<Transaction> target)
 		{
-			var transactions = new List<Transaction>();
-			foreach (var model in source)
+			target = new List<Transaction>();
+			try
 			{
-				if (IsDuplicateTransaction(model))
+				foreach (var model in source)
 				{
-					_logger.Debug($"Transaction with transaction info TransactionDate: {model.TransDate}, GLAccount: {model.GLAccount}, " +
-					              $"PostSequence: {model.PostSeq}, BatchEntry: {model.BatchEntry}, SourceCode: {model.SourceCode} is already in DB. Skip this model");
-					continue;
-				}
-
-				var trans = new Transaction
-				{
-					TransactionDate = model.TransDate,
-					GLAccount = model.GLAccount,
-					PostSequence = (int)model.PostSeq,
-					BatchEntry = model.BatchEntry,
-					SourceCode = model.SourceCode,
-					Debit = (decimal)model.Debits,
-					Credit = (decimal)model.Credits,
-					ExchangeRate = (decimal)model.ExchRate
-				};
-
-				if (!TryDecodeYearPeriod(model.YearPeriod, out var yearPeriod))
-				{
-					_logger.Error($"Decoding YearPeriod faild, check above log for more information");
-					continue;
-				}
-				trans.YearPeriod = yearPeriod;
-
-				if (!TryDecodeVendorID(model.Description, out var vendorCode))
-				{
-					_logger.Error($"Decoding VendorCode faild, check above log for more information");
-					continue;
-				}
-				trans.VendorCode = vendorCode;
-
-				if (!string.IsNullOrWhiteSpace(model.Reference))
-				{
-					_logger.Debug($"Model has Reference, try to decode invoice info from: {model.Reference}");
-
-					if (!TryDecodeInvoiceNo(model.Reference, out var invoiceNo))
+					if (IsDuplicateTransaction(model))
 					{
-						_logger.Error($"Decoding InvoiceNo faild, check above log for more information");
+						_logger.Debug($"Transaction with transaction info TransactionDate: {model.TransDate}, GLAccount: {model.GLAccount}, " +
+									  $"PostSequence: {model.PostSeq}, BatchEntry: {model.BatchEntry}, SourceCode: {model.SourceCode} is already in DB. Skip this model");
 						continue;
 					}
-					trans.InvoiceNo = invoiceNo;
 
-					if (TryDecodeInvoiceDescription(model.Reference, out var invoiceDescription))
+					var trans = new Transaction
 					{
-						_logger.Warn($"Decoding InvoiceDescription faild, check above log for more information");
-						trans.InvoiceDescription = invoiceDescription;
+						TransactionDate = model.TransDate,
+						GLAccount = model.GLAccount,
+						PostSequence = (int)model.PostSeq,
+						BatchEntry = model.BatchEntry,
+						SourceCode = model.SourceCode,
+						Debit = (decimal)model.Debits,
+						Credit = (decimal)model.Credits,
+						ExchangeRate = (decimal)model.ExchRate
+					};
+
+					if (!TryDecodeYearPeriod(model.YearPeriod, out var yearPeriod))
+					{
+						_logger.Error($"Decoding YearPeriod faild, check above log for more information");
+						continue;
 					}
+					trans.YearPeriod = yearPeriod;
+
+					if (!TryDecodeVendorID(model.Description, out var vendorCode))
+					{
+						_logger.Error($"Decoding VendorCode faild, check above log for more information");
+						continue;
+					}
+					trans.VendorCode = vendorCode;
+
+					if (!string.IsNullOrWhiteSpace(model.Reference))
+					{
+						_logger.Debug($"Model has Reference, try to decode invoice info from: {model.Reference}");
+
+						if (!TryDecodeInvoiceNo(model.Reference, out var invoiceNo))
+						{
+							_logger.Error($"Decoding InvoiceNo faild, check above log for more information");
+							continue;
+						}
+						trans.InvoiceNo = invoiceNo;
+
+						if (TryDecodeInvoiceDescription(model.Reference, out var invoiceDescription))
+						{
+							_logger.Warn($"Decoding InvoiceDescription faild, check above log for more information");
+							trans.InvoiceDescription = invoiceDescription;
+						}
+					}
+
+					_logger.Debug($"Transformation successed, add result for DB insertion.");
+					target.Add(trans);
 				}
 
-				_logger.Debug($"Transformation successed, add result for DB insertion.");
-				transactions.Add(trans);
+				_logger.Debug($"Transform {target.Count} vaild transactions out of {source.Count} input. Insert them into DB");
+				return true;
 			}
-
-			_logger.Debug($"Transform {transactions.Count} vaild transactions out of {source.Count} input. Insert them into DB");
-			return transactions;
+			catch (Exception ex)
+			{
+				_logger.Error($"Exception happened during transforming TransactionModel to Transaction. Ex: {ex.Message}");
+				return false;
+			}
 		}
+
+		#region Helper
 
 		private bool TryDecodeYearPeriod(string input, out DateTime yearPeriod)
 		{
@@ -205,5 +214,7 @@ namespace AccountingHelper.Helper.ModelHelper
 			var pattern = "^[A-Z]{1,2}[0-9]{4,5}[A-Z]$";
 			return Regex.IsMatch(input, pattern);
 		}
+		
+		#endregion
 	}
 }

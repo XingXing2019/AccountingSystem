@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AccountingDatabase.Entity;
 using AccountingDatabase.Services;
@@ -13,39 +14,51 @@ namespace AccountingHelper.Helper.ModelHelper
 		private readonly IGlAccountService _glAccountService = new GlAccountService();
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		public List<GLAccount> TransformValidModels(IList<GLAccountModel> source)
+		public bool TransformValidModels(IList<GLAccountModel> source, out List<GLAccount> target)
 		{
-			var glAccounts = new List<GLAccount>();
-			foreach (var model in source)
+			target = new List<GLAccount>();
+			try
 			{
-				if (IsDuplicateGLAccount(model.AccountNumber))
+				foreach (var model in source)
 				{
-					_logger.Debug($"GlAccount: {model.AccountNumber} is already in DB. Skip this model");
-					continue;
+					if (IsDuplicateGLAccount(model.AccountNumber))
+					{
+						_logger.Debug($"GlAccount: {model.AccountNumber} is already in DB. Skip this model");
+						continue;
+					}
+
+					var glAccount = new GLAccount
+					{
+						AccountNumber = model.AccountNumber,
+						Description = model.Description,
+						Status = model.Status,
+						Configuration = model.Config,
+						In = model.In,
+						Code = model.Code
+					};
+
+					_logger.Debug($"Transformation successed, add result for DB insertion.");
+					target.Add(glAccount);
 				}
 
-				var glAccount = new GLAccount
-				{
-					AccountNumber = model.AccountNumber,
-					Description = model.Description,
-					Status = model.Status,
-					Configuration = model.Config,
-					In = model.In,
-					Code = model.Code
-				};
-
-				_logger.Debug($"Transformation successed, add result for DB insertion.");
-				glAccounts.Add(glAccount);
+				_logger.Debug($"Transform {target.Count} vaild GlAccount out of {source.Count} input. Insert them into DB");
+				return true;
 			}
-
-			_logger.Debug($"Transform {glAccounts.Count} vaild GlAccount out of {source.Count} input. Insert them into DB");
-			return glAccounts;
+			catch (Exception ex)
+			{
+				_logger.Error($"Exception happened during transforming GLAccountModel to GLAccount. Ex: {ex.Message}");
+				return false;
+			}
 		}
 
+		#region Helper
+		
 		private bool IsDuplicateGLAccount(string accountNumber)
 		{
 			var glAccount = _glAccountService.GetByID(accountNumber);
 			return glAccount != null;
 		}
+
+		#endregion
 	}
 }
