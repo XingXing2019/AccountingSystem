@@ -44,7 +44,7 @@ namespace AccountingInitializer.SQL
 			}
 		}
 
-		public bool TryGetSqlAction(string templateId, string sqlId, out SQLAction sqlAction)
+		public bool TryGetSqlAction(string templateId, string sqlId, out ISQLAction sqlAction)
 		{
 			_logger.Info($"Getting SQLAction with SQLTemplate ID: {templateId}, SQL ID: {sqlId}");
 
@@ -63,7 +63,7 @@ namespace AccountingInitializer.SQL
 			}
 
 			_logger.Info($"Return a copy of SQLAction with SQLTemplate ID: {templateId}, SQL ID: {sqlId}");
-			sqlAction = sqlAction.Clone() as SQLAction;
+			sqlAction = sqlAction.Clone() as ISQLAction;
 
 			return true;
 		}

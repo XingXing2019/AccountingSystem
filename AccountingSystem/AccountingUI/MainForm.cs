@@ -21,7 +21,8 @@ namespace AccountingUI
 		public MainForm()
 		{
 			InitializeComponent();
-			cmbGroupId.DataSource = _accountingUIHelper.LoadGroupIDs();
+			string templateId = "DataAnalysis", sqlId = "VendorAnalysis";
+			cmbGroupId.DataSource = _accountingUIHelper.LoadGroupIDs(templateId, sqlId);
 			cmbModelName.DataSource = _accountingUIHelper.LoadModelNames();
 		}
 
@@ -34,33 +35,8 @@ namespace AccountingUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			var selectItems = new List<string>
-			{
-				"VendorCode",
-				"VendorName",
-				"GroupID",
-				"COUNT(DISTINCT InvoiceNo) AS Invoices",
-				"SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod"
-			};
-			var whereItems = new List<string> { "VendorCode IS NOT NULL" };
-			var groupByItems = new List<string> { "VendorCode", "VendorName", "GroupID", "YearPeriod" };
-			var orderByItems = new List<string> { "VendorCode" };
-			var joinItems = new Dictionary<string, string> { { "Vendors", "VendorID = VendorCode" } };
-
-			//int pageSize = 10, pageNumber = 2;
-
-
-			var startPeriod = new DateTime(2020, 10, 01);
-			var endPeriod = new DateTime(2021, 08, 01);
-
-			var sqlEntity = new SqlEntity(selectItems, joinItems, whereItems, groupByItems, orderByItems);
-
-
-			var data = new TransactionAnalysisHelper().AnalyzeTransactionsInYearPeriod(sqlEntity, startPeriod, endPeriod);
-
-
-			//var data = new VendorAnalysisHelper().AnalyzeVendorGroups();
-			this.dgvTransactionData.DataSource = data;
+			string templateId = "DataAnalysis", sqlId = "TransactionAnalysis";
+			this.dgvTransactionData.DataSource = new DataAnalyzer().ExecuteSQLAction(templateId, sqlId);
 		}
 
 		private void button2_Click(object sender, EventArgs e)

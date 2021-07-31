@@ -6,7 +6,7 @@
   </DatabaseConnectionList>
   
   <SQLTemplateList>
-	<SQLTemplate>.\SQL\PackingSlips.xml</SQLTemplate>
+	<SQLTemplate>.\SQL\DataAnalysis.xml</SQLTemplate>
   </SQLTemplateList> 
   
   

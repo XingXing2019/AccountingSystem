@@ -8,17 +8,17 @@ namespace AccountingInitializer.SQL
 {
 	public class SQLTemplate : XmlReaderBase
 	{
-		private readonly Dictionary<string, SQLAction> _sqlActions;
+		private readonly Dictionary<string, ISQLAction> _sqlActions;
 
 		public string ID { get; set; }
 
 		public SQLTemplate(XmlNode configNode)
 		{
-			_sqlActions = new Dictionary<string, SQLAction>();
+			_sqlActions = new Dictionary<string, ISQLAction>();
 			ReadXml(configNode);
 		}
 
-		public bool TryGetSqlAction(string id, out SQLAction sqlAction)
+		public bool TryGetSqlAction(string id, out ISQLAction sqlAction)
 		{
 			sqlAction = null;
 

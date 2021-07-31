@@ -12,7 +12,7 @@ using NLog;
 
 namespace AccountingInitializer.SQL
 {
-	public class SQLAction : XmlReaderBase, ISQLAction, ICloneable
+	public class SQLAction : XmlReaderBase, ISQLAction
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 		private class SQLField
@@ -30,21 +30,23 @@ namespace AccountingInitializer.SQL
 		}
 
 		public string ID { get; private set; }
-
+		
 
 		private string _databaseID;
 		private string _sql;
 		private readonly Dictionary<string, SQLField> _variables;
-		private Dictionary<string, List<SQLField>> _sqlResults;
+		private DataTable _sqlResult;
 
 		public SQLAction()
 		{
 			_variables = new Dictionary<string, SQLField>();
+			_sqlResult = new DataTable();
 		}
 
 		public SQLAction(XmlNode configNode)
 		{
 			_variables = new Dictionary<string, SQLField>();
+			_sqlResult = new DataTable();
 			ReadXml(configNode);
 		}
 
@@ -60,12 +62,7 @@ namespace AccountingInitializer.SQL
 				_variables[variableName].Value = data[variableName];
 			}
 		}
-
-		public List<Object> GetSqlResult(string fieldName)
-		{
-			return !_sqlResults.ContainsKey(fieldName) ? null : _sqlResults[fieldName].Select(x => x.Value).ToList();
-		}
-
+		
 
 		#region Implementation of XmlReaderBase
 
@@ -124,7 +121,7 @@ namespace AccountingInitializer.SQL
 		#endregion
 
 
-		#region Implementation of IAction
+		#region Implementation of ISQLAction
 
 		/// <summary>
 		/// Execute the sql and fill the result into variables dictionary
@@ -156,14 +153,19 @@ namespace AccountingInitializer.SQL
 						_logger.Error($"No result return from sql: {sql}");
 						return;
 					}
-
-					FillSQLResults(reader);
+					
+					_sqlResult.Load(reader);
 				}
 			}
 			catch (Exception ex)
 			{
 				_logger.Error($"Exception happened during executing sql: {this._sql}. Ex: {ex.Message}");
 			}
+		}
+
+		public DataTable GetSQLResult()
+		{
+			return this._sqlResult;
 		}
 
 		#endregion
@@ -211,29 +213,7 @@ namespace AccountingInitializer.SQL
 
 			return sql;
 		}
-
-		/// <summary>
-		/// Fill sql results into _sqlResults
-		/// </summary>
-		/// <param name="reader"></param>
-		private void FillSQLResults(SqlDataReader reader)
-		{
-			_sqlResults = new Dictionary<string, List<SQLField>>();
-			while (reader.Read())
-			{
-				for (int i = 0; i < reader.FieldCount; i++)
-				{
-					var name = reader.GetName(i);
-					var value = reader.GetValue(i);
-					var type = reader.GetFieldType(i);
-
-					if (!_sqlResults.ContainsKey(name))
-						_sqlResults[name] = new List<SQLField>();
-					_sqlResults[name].Add(new SQLField(type, name, value));
-				}
-			}
-		}
-
+		
 		#endregion
 	}
 }

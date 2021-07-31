@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SQLTemplate ID="DataAnalysis" >
+  <SQLAction ID="TransactionAnalysis" DatabaseID="AccountingSystem">
+    <SQL>
+		DECLARE @sql_col NVARCHAR(1000);
+		SELECT @sql_col = ISNULL(@sql_col + ',','') + QUOTENAME(SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7)) FROM Transactions GROUP BY YearPeriod ORDER BY YearPeriod;
+
+		DECLARE @sql NVARCHAR(2000);
+		SET @sql = N'
+			WITH Data AS (SELECT
+				VendorCode, VendorName, GroupID, COUNT(DISTINCT InvoiceNo) AS Invoices, SUBSTRING(CONVERT(VARCHAR(50), YearPeriod), 1, 7) AS YearPeriod
+			FROM
+				Transactions
+			JOIN
+				Vendors ON VendorID = VendorCode
+			WHERE
+				VendorCode IS NOT NULL
+			GROUP BY
+				VendorCode, VendorName, GroupID, YearPeriod)
+			SELECT
+				*
+			FROM
+				Data
+			PIVOT
+				(SUM([invoices]) FOR YearPeriod IN  ('+@sql_col+')) AS PivotTable
+		';
+		EXEC(@sql);
+    </SQL>
+  </SQLAction>  
+  <SQLAction ID="VendorAnalysis" DatabaseID="AccountingSystem">
+    <SQL>
+		SELECT
+			DISTINCT GroupID
+		FROM
+			Vendors
+		ORDER BY
+			GroupID
+    </SQL>
+  </SQLAction>
+</SQLTemplate>

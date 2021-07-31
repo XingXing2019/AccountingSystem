@@ -17,18 +17,17 @@ namespace AccountingHelper.Helper.UIHelper
 	{
 		private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-		private readonly TransactionAnalysisHelper _transactionAnalyzer;
-		private readonly VendorAnalysisHelper _vendorAnalyzer;
+		private readonly DataAnalyzer _dataAnalyzer;
 
 		public AccountingUIHelper()
 		{
-			_transactionAnalyzer = new TransactionAnalysisHelper();
-			_vendorAnalyzer = new VendorAnalysisHelper();
+			_dataAnalyzer = new DataAnalyzer();
 		}
 
-		public List<string> LoadGroupIDs()
+		public List<string> LoadGroupIDs(string templateId, string sqlId)
 		{
-			var data = _vendorAnalyzer.AnalyzeVendorGroups();
+
+			var data = _dataAnalyzer.ExecuteSQLAction(templateId, sqlId);
 			var groupIds = new List<string>();
 			foreach (DataRow row in data.Rows)
 			{
