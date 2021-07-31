@@ -52,6 +52,11 @@ namespace AccountingInitializer.SQL
 
 		public void SetSQLVariables(Dictionary<string, object> data)
 		{
+			if (data == null)
+			{
+				_logger.Info($"No data provided to set sql variable value");
+				return;
+			}
 			if (_variables.Any(x => !data.ContainsKey(x.Key)) || data.Any(x => !_variables.ContainsKey(x.Key)))
 			{
 				throw new ApplicationException($"The provided data does not fulfill the requirement of _variables");

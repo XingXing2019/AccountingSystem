@@ -36,6 +36,7 @@ namespace AccountingUI
 			this.cmbGroupId = new System.Windows.Forms.ComboBox();
 			this.btnSaveAnalysisRes = new System.Windows.Forms.Button();
 			this.cmbModelName = new System.Windows.Forms.ComboBox();
+			this.cmbTransAnalysisType = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -60,7 +61,7 @@ namespace AccountingUI
 			// 
 			// btnAnalyzeTransactions
 			// 
-			this.btnAnalyzeTransactions.Location = new System.Drawing.Point(311, 11);
+			this.btnAnalyzeTransactions.Location = new System.Drawing.Point(438, 14);
 			this.btnAnalyzeTransactions.Name = "btnAnalyzeTransactions";
 			this.btnAnalyzeTransactions.Size = new System.Drawing.Size(120, 23);
 			this.btnAnalyzeTransactions.TabIndex = 2;
@@ -88,7 +89,7 @@ namespace AccountingUI
 			// 
 			// btnSaveAnalysisRes
 			// 
-			this.btnSaveAnalysisRes.Location = new System.Drawing.Point(311, 42);
+			this.btnSaveAnalysisRes.Location = new System.Drawing.Point(438, 43);
 			this.btnSaveAnalysisRes.Name = "btnSaveAnalysisRes";
 			this.btnSaveAnalysisRes.Size = new System.Drawing.Size(120, 23);
 			this.btnSaveAnalysisRes.TabIndex = 5;
@@ -104,11 +105,21 @@ namespace AccountingUI
 			this.cmbModelName.Size = new System.Drawing.Size(134, 23);
 			this.cmbModelName.TabIndex = 6;
 			// 
+			// cmbTransAnalysisType
+			// 
+			this.cmbTransAnalysisType.FormattingEnabled = true;
+			this.cmbTransAnalysisType.Location = new System.Drawing.Point(302, 15);
+			this.cmbTransAnalysisType.Name = "cmbTransAnalysisType";
+			this.cmbTransAnalysisType.Size = new System.Drawing.Size(121, 23);
+			this.cmbTransAnalysisType.TabIndex = 7;
+			this.cmbTransAnalysisType.Text = "Analysis Type";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1199, 601);
+			this.Controls.Add(this.cmbTransAnalysisType);
 			this.Controls.Add(this.cmbModelName);
 			this.Controls.Add(this.btnSaveAnalysisRes);
 			this.Controls.Add(this.cmbGroupId);
@@ -133,6 +144,7 @@ namespace AccountingUI
 		private System.Windows.Forms.ComboBox cmbGroupId;
 		private System.Windows.Forms.Button btnSaveAnalysisRes;
 		private System.Windows.Forms.ComboBox cmbModelName;
+		private System.Windows.Forms.ComboBox cmbTransAnalysisType;
 	}
 }
 

@@ -48,17 +48,10 @@ namespace AccountingInitializer.SQL
 		{
 			_logger.Info($"Getting SQLAction with SQLTemplate ID: {templateId}, SQL ID: {sqlId}");
 
-			sqlAction = null;
-			if (!_sqlTemplateList.ContainsKey(templateId))
-			{
-				_logger.Error($"Unable to get sql template with SQLTemplate ID: {templateId}");
-				return false;
-			}
+			sqlAction = GetSqlAction(templateId, sqlId);
 
-			var sqlTemplate = _sqlTemplateList[templateId];
-			if (!sqlTemplate.TryGetSqlAction(sqlId, out sqlAction))
+			if (sqlAction == null)
 			{
-				_logger.Error($"Unable to get sql action with SQL ID: {sqlId}");
 				return false;
 			}
 
@@ -68,6 +61,26 @@ namespace AccountingInitializer.SQL
 			return true;
 		}
 
+		public bool TrySetSqlActionVariables(string templateId, string sqlId, Dictionary<string, Object> data)
+		{
+			try
+			{
+				var sqlAction = GetSqlAction(templateId, sqlId);
+				if (sqlAction == null)
+				{
+					return false;
+				}
+
+				_logger.Info($"Setting variables values for SQLAction with SQLTemplate ID: {templateId}, SQL ID: {sqlId}");
+				sqlAction.SetSQLVariables(data);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				_logger.Error($"Exception happened during set variables for sql action with template id: {templateId}, sql id: {sqlId}. Ex: {ex.Message}");
+				return false;
+			}
+		}
 
 		#region Implementation of XmlReaderBase
 
@@ -104,5 +117,29 @@ namespace AccountingInitializer.SQL
 
 		#endregion
 
+
+		#region Helper
+
+		private ISQLAction GetSqlAction(string templateId, string sqlId)
+		{
+			_logger.Info($"Getting SQLAction with SQLTemplate ID: {templateId}, SQL ID: {sqlId}");
+			
+			if (!_sqlTemplateList.ContainsKey(templateId))
+			{
+				_logger.Error($"Unable to get sql template with SQLTemplate ID: {templateId}");
+				return null;
+			}
+
+			var sqlTemplate = _sqlTemplateList[templateId];
+			if (!sqlTemplate.TryGetSqlAction(sqlId, out var sqlAction))
+			{
+				_logger.Error($"Unable to get sql action with SQL ID: {sqlId}");
+				return null;
+			}
+
+			return sqlAction;
+		}
+
+		#endregion
 	}
 }

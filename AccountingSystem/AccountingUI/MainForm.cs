@@ -1,8 +1,7 @@
-﻿using AccountingHelper.Helper.DataAnalysisHelper;
-using AccountingHelper.Helper.ExcelHelper;
-using AccountingHelper.Helper.UIHelper;
+﻿using AccountingHelper.Helper.UIHelper;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -16,12 +15,19 @@ namespace AccountingUI
 		private string path;
 
 
-		
+
 		public MainForm()
 		{
 			InitializeComponent();
 			string templateId = "DataAnalysis", sqlId = "VendorAnalysis";
-			cmbGroupId.DataSource = _accountingUIHelper.LoadGroupIDs(templateId, sqlId);
+			if (_accountingUIHelper.TryLoadGroupIDs(templateId, sqlId, out var groupIds))
+			{
+				cmbGroupId.DataSource = groupIds;
+			}
+
+			cmbTransAnalysisType.DataSource = new List<string> {"Invoice Count", "Total Balance"};
+			
+			
 			cmbModelName.DataSource = _accountingUIHelper.LoadModelNames();
 		}
 
@@ -37,8 +43,14 @@ namespace AccountingUI
 
 		private void btnAnalyzeTransactions_Click(object sender, EventArgs e)
 		{
-			string templateId = "DataAnalysis", sqlId = "TransactionAnalysis";
-			this.dgvTransactionData.DataSource = new DataAnalyzer().ExecuteSQLAction(templateId, sqlId);
+			string templateId = "DataAnalysis", sqlId = cmbTransAnalysisType.Text;
+			if (!_accountingUIHelper.AnalyseTransactions(templateId, sqlId, out var result))
+			{
+				_logger.Error($"Unable to analyse transaction data");
+				MessageBox.Show($"Unable to analyse transaction data");
+			}
+
+			this.dgvTransactionData.DataSource = result;
 		}
 
 		private void btnSaveAnalysisRes_Click(object sender, EventArgs e)
@@ -57,11 +69,11 @@ namespace AccountingUI
 				var filePath = saveFileDialog.FileName;
 				var data = this.dgvTransactionData.DataSource as DataTable;
 				this.dgvTransactionData.DataSource = null;
-				ExcelWriter.WriteExcel(filePath, data);
+				_accountingUIHelper.DownloadDatabaseDataToExcel(data, filePath);
 				MessageBox.Show($"Excel saved");
 			}
 		}
-		
+
 		private void txtExcelFile_Click(object sender, EventArgs e)
 		{
 			var file = new OpenFileDialog();

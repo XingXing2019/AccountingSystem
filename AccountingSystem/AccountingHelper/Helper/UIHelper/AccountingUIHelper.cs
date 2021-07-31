@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using AccountingInitializer.SQL;
 
 namespace AccountingHelper.Helper.UIHelper
 {
@@ -24,17 +25,22 @@ namespace AccountingHelper.Helper.UIHelper
 			_dataAnalyzer = new DataAnalyzer();
 		}
 
-		public List<string> LoadGroupIDs(string templateId, string sqlId)
+		public bool TryLoadGroupIDs(string templateId, string sqlId, out List<string> groupIds)
 		{
-
-			var data = _dataAnalyzer.ExecuteSQLAction(templateId, sqlId);
-			var groupIds = new List<string>();
+			groupIds = null;
+			if (!_dataAnalyzer.TryExecuteSQLAction(templateId, sqlId, out var data))
+			{
+				_logger.Error($"Unbale to load group ids");
+				return false;
+			}
+			
+			groupIds = new List<string>();
 			foreach (DataRow row in data.Rows)
 			{
 				groupIds.Add(row.ItemArray[0].ToString());
 			}
 
-			return groupIds;
+			return true;
 		}
 
 		public List<string> LoadModelNames()
@@ -71,6 +77,25 @@ namespace AccountingHelper.Helper.UIHelper
 		public bool DownloadDatabaseDataToExcel(DataTable data, string filePath)
 		{
 			return ExcelWriter.WriteExcel(filePath, data);
+		}
+
+		public bool AnalyseTransactions(string templateId, string sqlId, out DataTable result, Dictionary<string, object> data = null)
+		{
+			result = null;
+
+			if (!SQLManager.Instance.TrySetSqlActionVariables(templateId, sqlId, data))
+			{
+				_logger.Error($"Unable to analyse transaction data using sql with template id: {templateId}, sql id: {sqlId}");
+				return false;
+			}
+
+			if (!_dataAnalyzer.TryExecuteSQLAction(templateId, sqlId, out result))
+			{
+				_logger.Error("Unable to execute sql.");
+				return false;
+			}
+
+			return true;
 		}
 
 		#region Helper

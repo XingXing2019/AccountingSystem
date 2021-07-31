@@ -1,19 +1,22 @@
-﻿using AccountingInitializer.SQL;
+﻿using System;
+using System.Collections.Generic;
+using AccountingInitializer.SQL;
 using System.Data;
 
 namespace AccountingHelper.Helper.DataAnalysisHelper
 {
 	public class DataAnalyzer
 	{
-		public DataTable ExecuteSQLAction(string templateId, string sqlId)
+		public bool TryExecuteSQLAction(string templateId, string sqlId, out DataTable sqlResult)
 		{
+			sqlResult = null;
 			if (!SQLManager.Instance.TryGetSqlAction(templateId, sqlId, out var sqlAction))
 			{
-				return null;
+				return false;
 			}
-
 			sqlAction.ExecuteSQL();
-			return sqlAction.GetSQLResult();
+			sqlResult = sqlAction.GetSQLResult();
+			return true;
 		}
 	}
 }
