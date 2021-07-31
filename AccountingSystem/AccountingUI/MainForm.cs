@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Windows.Forms;
-using AccountingHelper.Helper.DataAnalysisHelper;
+﻿using AccountingHelper.Helper.DataAnalysisHelper;
 using AccountingHelper.Helper.ExcelHelper;
 using AccountingHelper.Helper.UIHelper;
 using NLog;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace AccountingUI
 {
@@ -30,17 +29,26 @@ namespace AccountingUI
 		{
 			var path = this.path;
 			var modelName = this.cmbModelName.Text;
-			_accountingUIHelper.UploadExcelDataToDatabase(modelName, path);
+			if (!_accountingUIHelper.UploadExcelDataToDatabase(modelName, path))
+				MessageBox.Show("Failed to upload excel data to database");
+			else
+				MessageBox.Show($"Save {modelName}s to database");
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnAnalyzeTransactions_Click(object sender, EventArgs e)
 		{
 			string templateId = "DataAnalysis", sqlId = "TransactionAnalysis";
 			this.dgvTransactionData.DataSource = new DataAnalyzer().ExecuteSQLAction(templateId, sqlId);
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void btnSaveAnalysisRes_Click(object sender, EventArgs e)
 		{
+			if (this.dgvTransactionData.DataSource == null)
+			{
+				MessageBox.Show("There is no data to save");
+				return;
+			}
+
 			var saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
 
@@ -48,7 +56,9 @@ namespace AccountingUI
 			{
 				var filePath = saveFileDialog.FileName;
 				var data = this.dgvTransactionData.DataSource as DataTable;
+				this.dgvTransactionData.DataSource = null;
 				ExcelWriter.WriteExcel(filePath, data);
+				MessageBox.Show($"Excel saved");
 			}
 		}
 		

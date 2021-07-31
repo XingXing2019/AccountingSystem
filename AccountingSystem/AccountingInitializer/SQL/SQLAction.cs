@@ -188,7 +188,7 @@ namespace AccountingInitializer.SQL
 			foreach (var variable in this._variables)
 			{
 				var sqlField = variable.Value;
-				newSqlAction._variables.Add(variable.Key, new SQLField(sqlField.Type, sqlField.Name));
+				newSqlAction._variables.Add(variable.Key, new SQLField(sqlField.Type, sqlField.Name, sqlField.Value));
 			}
 
 			return newSqlAction;

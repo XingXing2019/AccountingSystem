@@ -29,44 +29,44 @@ namespace AccountingUI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.btnLoadExcel = new System.Windows.Forms.Button();
+			this.btnUploadExcel = new System.Windows.Forms.Button();
 			this.txtExcelUploadFile = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnAnalyzeTransactions = new System.Windows.Forms.Button();
 			this.dgvTransactionData = new System.Windows.Forms.DataGridView();
 			this.cmbGroupId = new System.Windows.Forms.ComboBox();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnSaveAnalysisRes = new System.Windows.Forms.Button();
 			this.cmbModelName = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// btnLoadExcel
+			// btnUploadExcel
 			// 
-			this.btnLoadExcel.Location = new System.Drawing.Point(152, 42);
-			this.btnLoadExcel.Name = "btnLoadExcel";
-			this.btnLoadExcel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.btnLoadExcel.Size = new System.Drawing.Size(75, 23);
-			this.btnLoadExcel.TabIndex = 0;
-			this.btnLoadExcel.Text = "Load";
-			this.btnLoadExcel.UseVisualStyleBackColor = true;
-			this.btnLoadExcel.Click += new System.EventHandler(this.btnLoadExcel_Click);
+			this.btnUploadExcel.Location = new System.Drawing.Point(152, 42);
+			this.btnUploadExcel.Name = "btnUploadExcel";
+			this.btnUploadExcel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.btnUploadExcel.Size = new System.Drawing.Size(99, 23);
+			this.btnUploadExcel.TabIndex = 0;
+			this.btnUploadExcel.Text = "Upload Data";
+			this.btnUploadExcel.UseVisualStyleBackColor = true;
+			this.btnUploadExcel.Click += new System.EventHandler(this.btnLoadExcel_Click);
 			// 
 			// txtExcelUploadFile
 			// 
 			this.txtExcelUploadFile.Location = new System.Drawing.Point(12, 12);
 			this.txtExcelUploadFile.Name = "txtExcelUploadFile";
-			this.txtExcelUploadFile.Size = new System.Drawing.Size(215, 23);
+			this.txtExcelUploadFile.Size = new System.Drawing.Size(239, 23);
 			this.txtExcelUploadFile.TabIndex = 1;
 			this.txtExcelUploadFile.Click += new System.EventHandler(this.txtExcelFile_Click);
 			// 
-			// button1
+			// btnAnalyzeTransactions
 			// 
-			this.button1.Location = new System.Drawing.Point(254, 42);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btnAnalyzeTransactions.Location = new System.Drawing.Point(311, 11);
+			this.btnAnalyzeTransactions.Name = "btnAnalyzeTransactions";
+			this.btnAnalyzeTransactions.Size = new System.Drawing.Size(120, 23);
+			this.btnAnalyzeTransactions.TabIndex = 2;
+			this.btnAnalyzeTransactions.Text = "Show Transactions";
+			this.btnAnalyzeTransactions.UseVisualStyleBackColor = true;
+			this.btnAnalyzeTransactions.Click += new System.EventHandler(this.btnAnalyzeTransactions_Click);
 			// 
 			// dgvTransactionData
 			// 
@@ -74,7 +74,7 @@ namespace AccountingUI
 			this.dgvTransactionData.Location = new System.Drawing.Point(12, 103);
 			this.dgvTransactionData.Name = "dgvTransactionData";
 			this.dgvTransactionData.RowTemplate.Height = 25;
-			this.dgvTransactionData.Size = new System.Drawing.Size(1175, 286);
+			this.dgvTransactionData.Size = new System.Drawing.Size(1175, 486);
 			this.dgvTransactionData.TabIndex = 3;
 			// 
 			// cmbGroupId
@@ -86,15 +86,15 @@ namespace AccountingUI
 			this.cmbGroupId.TabIndex = 4;
 			this.cmbGroupId.Text = "Group IDs";
 			// 
-			// button2
+			// btnSaveAnalysisRes
 			// 
-			this.button2.Location = new System.Drawing.Point(394, 43);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 5;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.btnSaveAnalysisRes.Location = new System.Drawing.Point(311, 42);
+			this.btnSaveAnalysisRes.Name = "btnSaveAnalysisRes";
+			this.btnSaveAnalysisRes.Size = new System.Drawing.Size(120, 23);
+			this.btnSaveAnalysisRes.TabIndex = 5;
+			this.btnSaveAnalysisRes.Text = "Save To Excel";
+			this.btnSaveAnalysisRes.UseVisualStyleBackColor = true;
+			this.btnSaveAnalysisRes.Click += new System.EventHandler(this.btnSaveAnalysisRes_Click);
 			// 
 			// cmbModelName
 			// 
@@ -108,14 +108,14 @@ namespace AccountingUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1252, 450);
+			this.ClientSize = new System.Drawing.Size(1199, 601);
 			this.Controls.Add(this.cmbModelName);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.btnSaveAnalysisRes);
 			this.Controls.Add(this.cmbGroupId);
 			this.Controls.Add(this.dgvTransactionData);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnAnalyzeTransactions);
 			this.Controls.Add(this.txtExcelUploadFile);
-			this.Controls.Add(this.btnLoadExcel);
+			this.Controls.Add(this.btnUploadExcel);
 			this.Name = "MainForm";
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.dgvTransactionData)).EndInit();
@@ -126,12 +126,12 @@ namespace AccountingUI
 
 		#endregion
 
-		private System.Windows.Forms.Button btnLoadExcel;
+		private System.Windows.Forms.Button btnUploadExcel;
 		private System.Windows.Forms.TextBox txtExcelUploadFile;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnAnalyzeTransactions;
 		private System.Windows.Forms.DataGridView dgvTransactionData;
 		private System.Windows.Forms.ComboBox cmbGroupId;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnSaveAnalysisRes;
 		private System.Windows.Forms.ComboBox cmbModelName;
 	}
 }
