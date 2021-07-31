@@ -1542,6 +1542,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "AccountingInitializer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
           "NLog": "4.7.10"
@@ -1568,6 +1569,20 @@
         },
         "runtime": {
           "bin/placeholder/AccountingHelper.dll": {}
+        }
+      },
+      "AccountingInitializer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.0.1",
+          "NLog": "4.7.10"
+        },
+        "compile": {
+          "bin/placeholder/AccountingInitializer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AccountingInitializer.dll": {}
         }
       }
     }
@@ -5895,6 +5910,11 @@
       "type": "project",
       "path": "../AccountingHelper/AccountingHelper.csproj",
       "msbuildProject": "../AccountingHelper/AccountingHelper.csproj"
+    },
+    "AccountingInitializer/1.0.0": {
+      "type": "project",
+      "path": "../AccountingInitializer/AccountingInitializer.csproj",
+      "msbuildProject": "../AccountingInitializer/AccountingInitializer.csproj"
     }
   },
   "projectFileDependencyGroups": {

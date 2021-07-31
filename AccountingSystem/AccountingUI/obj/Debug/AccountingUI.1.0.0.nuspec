@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AccountingUI</id>
+    <version>1.0.0</version>
+    <authors>AccountingUI</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="AccountingHelper" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="NLog" version="4.7.10" exclude="Build,Analyzers" />
+        <dependency id="NLog.Config" version="4.7.10" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingUI.runtimeconfig.json" target="lib\netcoreapp3.1\AccountingUI.runtimeconfig.json" />
+    <file src="D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingUI.dll" target="lib\netcoreapp3.1\AccountingUI.dll" />
+  </files>
+</package>

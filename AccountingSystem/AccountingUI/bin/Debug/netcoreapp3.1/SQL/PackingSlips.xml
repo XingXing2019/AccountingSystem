@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SQLTemplate ID="Packing Slips" >
+  
+
+  <SQLAction ID="QUERY_ORDER" DatabaseID="PD">
+    <SQL>
+	  DECLARE @ContainerID VARCHAR(30) = %%%ContainerID%%%
+
+SELECT
+	mw.*,
+	c.rp_container_ck,
+	c.rp_carrier_barcode,
+	SUBSTRING(mw.DeliveryAddress1, 1, 26)  AS DeliveryAddress1_Line1,
+	SUBSTRING(mw.DeliveryAddress1, 27, 52) AS DeliveryAddress1_Line2
+FROM
+	rp_work w join rp_allocation a ON (w.rp_work_tk = a.rp_work_ftk)
+			join rp_container c ON (a.rp_container_ftk = c.rp_container_tk)
+			join uvw_misc_work mw ON (w.rp_misc_ftk = mw.rp_misc_tk)
+			LEFT JOIN rp_customer cu ON (w.rp_customer_ftk = cu.rp_customer_tk)
+			LEFT JOIN rp_route r ON (w.rp_route_ftk = r.rp_route_tk)
+			LEFT JOIN rp_host_order ho ON (w.rp_host_order_ftk = ho.rp_host_order_tk)
+WHERE
+	c.rp_container_ck = @ContainerID
+AND c.rp_markedForDeletion IS NULL
+    </SQL>
+    <SQLVar Type="String" Name="ContainerID" />
+  </SQLAction>
+ 
+  
+</SQLTemplate>

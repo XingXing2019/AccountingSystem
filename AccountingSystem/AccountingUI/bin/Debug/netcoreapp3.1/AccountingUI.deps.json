@@ -1017,6 +1017,7 @@
       },
       "AccountingDatabase/1.0.0": {
         "dependencies": {
+          "AccountingInitializer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
           "NLog": "4.7.10"
@@ -1035,6 +1036,15 @@
         },
         "runtime": {
           "AccountingHelper.dll": {}
+        }
+      },
+      "AccountingInitializer/1.0.0": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.0.1",
+          "NLog": "4.7.10"
+        },
+        "runtime": {
+          "AccountingInitializer.dll": {}
         }
       }
     }
@@ -1744,6 +1754,11 @@
       "sha512": ""
     },
     "AccountingHelper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountingInitializer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,11 +1,15 @@
-﻿using AccountingDatabase.Entity;
+﻿using System;
+using System.Runtime.InteropServices.ComTypes;
+using AccountingDatabase.Entity;
+using AccountingInitializer.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountingDatabase
 {
 	public class AccountingDBContext : DbContext
 	{
-		private const string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=AccountingSystem";
+		private const string DatabaseName = "AccountingSystem";
+		private string _connectionString = DatabaseManager.Instance.GetConnectionString(DatabaseName);
 
 		public DbSet<Transaction> Transactions { get; set; }
 		public DbSet<Vendor> Vendors { get; set; }
@@ -13,7 +17,10 @@ namespace AccountingDatabase
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(ConnectionString);
+			if (string.IsNullOrEmpty(_connectionString))
+				throw new ApplicationException($"Unable to get connection string with database name: {DatabaseName}");
+
+			optionsBuilder.UseSqlServer(_connectionString);
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

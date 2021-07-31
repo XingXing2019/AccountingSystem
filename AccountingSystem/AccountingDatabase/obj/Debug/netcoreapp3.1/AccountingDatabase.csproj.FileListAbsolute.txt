@@ -11,3 +11,6 @@ D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\ne
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.pdb
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.genruntimeconfig.cache
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.csproj.AssemblyReference.cache
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\bin\Debug\netcoreapp3.1\AccountingInitializer.dll
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\bin\Debug\netcoreapp3.1\AccountingInitializer.pdb
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingDatabase\obj\Debug\netcoreapp3.1\AccountingDatabase.csproj.CopyComplete

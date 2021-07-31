@@ -1,0 +1,13 @@
+<Config SaveProcessedConfigFile="True">
+  <DatabaseConnectionList>
+    <DatabaseConnection ID="AccountingSystem" DatabaseName="AccountingSystem">
+		<ConnectionString>Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=AccountingSystem</ConnectionString>
+    </DatabaseConnection>
+  </DatabaseConnectionList>
+  
+  <SQLTemplateList>
+	<SQLTemplate>.\SQL\PackingSlips.xml</SQLTemplate>
+  </SQLTemplateList> 
+  
+  
+</Config>

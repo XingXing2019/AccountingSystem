@@ -11,3 +11,5 @@ D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netc
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.csproj.CopyComplete
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\obj\Debug\netcoreapp3.1\AccountingHelper.pdb
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\bin\Debug\netcoreapp3.1\AccountingInitializer.dll
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingHelper\bin\Debug\netcoreapp3.1\AccountingInitializer.pdb

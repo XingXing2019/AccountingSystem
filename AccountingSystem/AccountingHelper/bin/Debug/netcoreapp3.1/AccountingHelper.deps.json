@@ -1094,12 +1094,22 @@
       },
       "AccountingDatabase/1.0.0": {
         "dependencies": {
+          "AccountingInitializer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
           "NLog": "4.7.10"
         },
         "runtime": {
           "AccountingDatabase.dll": {}
+        }
+      },
+      "AccountingInitializer/1.0.0": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.0.1",
+          "NLog": "4.7.10"
+        },
+        "runtime": {
+          "AccountingInitializer.dll": {}
         }
       }
     }
@@ -1804,6 +1814,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "AccountingDatabase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountingInitializer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

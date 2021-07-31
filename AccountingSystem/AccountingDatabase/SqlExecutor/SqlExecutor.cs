@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using AccountingInitializer.Database;
 using Microsoft.Data.SqlClient;
 using NLog;
 
@@ -8,8 +9,9 @@ namespace AccountingDatabase.SqlExecutor
 {
 	public class SqlExecutor
 	{
-		private const string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=AccountingSystem";
 		private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+		private const string DatabaseName = "AccountingSystem";
+		private static string _connectionString = DatabaseManager.Instance.GetConnectionString(DatabaseName);
 
 		public static DataTable ExecuteSelectQuery(string selectSql)
 		{
@@ -17,7 +19,7 @@ namespace AccountingDatabase.SqlExecutor
 			{
 				_logger.Debug($"Start execute sql: {selectSql}");
 				var columnValues = new Dictionary<string, List<string>>();
-				using var sqlConnection = new SqlConnection(ConnectionString);
+				using var sqlConnection = new SqlConnection(_connectionString);
 				if (sqlConnection.State != ConnectionState.Open)
 					sqlConnection.Open();
 
@@ -49,7 +51,7 @@ namespace AccountingDatabase.SqlExecutor
 			try
 			{
 				_logger.Debug($"Start execute sql: {sql}");
-				using var sqlConnection = new SqlConnection(ConnectionString);
+				using var sqlConnection = new SqlConnection(_connectionString);
 				if (sqlConnection.State != ConnectionState.Open)
 					sqlConnection.Open();
 

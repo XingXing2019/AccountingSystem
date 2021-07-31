@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AccountingInitializer;
 
 namespace AccountingUI
 {
@@ -14,6 +15,7 @@ namespace AccountingUI
 		[STAThread]
 		static void Main()
 		{
+			new AppInitializer().Exxcute();
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

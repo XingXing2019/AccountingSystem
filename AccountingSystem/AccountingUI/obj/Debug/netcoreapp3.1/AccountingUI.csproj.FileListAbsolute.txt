@@ -59,3 +59,5 @@ D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\obj\Debug\netcorea
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\obj\Debug\netcoreapp3.1\AccountingUI.dll
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\obj\Debug\netcoreapp3.1\AccountingUI.pdb
 D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\obj\Debug\netcoreapp3.1\AccountingUI.genruntimeconfig.cache
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingInitializer.dll
+D:\C#\Projects\AccountingSystem\AccountingSystem\AccountingUI\bin\Debug\netcoreapp3.1\AccountingInitializer.pdb
